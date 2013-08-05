@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups xmlns="http://www.isdc.ro/wro"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.isdc.ro/wro wro.xsd">
+
+    <!-- libs -->
+    <group name="libs">
+        <js>/js/libs/json2.js</js>
+        <js>/js/libs/moment.js</js>
+        <js>/js/libs/jquery/jquery.js</js>
+        <js>/js/libs/jquery/plugins/*.js</js>
+        <js>/js/libs/underscore.js</js>
+        <js>/js/libs/backbone.js</js>
+    </group>
+
+    <group name="css">
+        <css>/css/reset.css</css>
+        <css>/css/main.less</css>
+    </group>
+
+    <group name="app">
+        <js>/js/main.js</js>
+    </group>
+
+    <group name="all">
+        <group-ref>libs</group-ref>
+        <group-ref>app</group-ref>
+    </group>
+
+</groups>
