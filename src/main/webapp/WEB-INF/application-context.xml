@@ -10,10 +10,11 @@
 
     <!--
     <bean id="firstService" class="com.spark.traveler.service.FirstService"></bean>
-    
-    <context:component-scan base-package="com.spark.traveler.rest" />
-    <context:component-scan base-package="com.spark.traveler.dao" />
     -->
+
+    <context:component-scan base-package="fr.xebia.training.model" />
+    <context:component-scan base-package="fr.xebia.training.dao" />
+
 
     <!--
     <bean id="firstResource" class="com.spark.traveler.rest.FirstResource" scope="request">
