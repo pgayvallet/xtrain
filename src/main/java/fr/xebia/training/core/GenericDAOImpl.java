@@ -12,7 +12,7 @@ import java.lang.reflect.ParameterizedType;
  *
  * @author spark <gayvallet@fullsix.com>
  */
-public class GenericDAOImpl<K extends Serializable, T> implements GenericDAO<K, T> {
+public abstract class GenericDAOImpl<K extends Serializable, T> implements GenericDAO<K, T> {
 
     private Class<T> type;
 
