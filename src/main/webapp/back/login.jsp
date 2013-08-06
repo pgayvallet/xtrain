@@ -8,5 +8,9 @@
     </head>
     <body>
         <h1>Stripes Calculator</h1>
+
+        <p>
+            ${actionBean.message}
+        </p>
     </body>
 </html>
