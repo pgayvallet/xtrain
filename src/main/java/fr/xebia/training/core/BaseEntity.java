@@ -1,6 +1,7 @@
 package fr.xebia.training.core;
 
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 /**
@@ -8,16 +9,17 @@ import java.io.Serializable;
  *
  * @author spark <gayvallet@fullsix.com>
  */
+@MappedSuperclass
 public class BaseEntity implements Serializable {
 
     @Id
-    private String id;
+    protected Long id;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -13,4 +13,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TS_TRAINING_CAT")
 public class TrainingCategory extends BaseEntity {
+
+
 }
