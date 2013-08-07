@@ -1,7 +1,5 @@
 package fr.xebia.training.core;
 
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
-import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -36,13 +33,13 @@ public abstract class GenericDAOImpl<K extends Serializable, T> extends Hibernat
     }
 
     public GenericDAOImpl() {
-        this.type = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+        this.type = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1];
     }
 
     @Transactional(readOnly = true)
     @Override
     public T findById(K id) {
-        return (T) getSessionFactory().getCurrentSession().get(getType(), id);
+        return (T) getHibernateTemplate().get(getType(), id);
     }
 
     @Transactional
