@@ -157,6 +157,11 @@
             <version>2.4</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+        	<groupId>jstl</groupId>
+        	<artifactId>jstl</artifactId>
+        	<version>1.2</version>
+        </dependency>
         <!-- junit -->
         <dependency>
             <groupId>junit</groupId>

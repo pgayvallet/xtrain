@@ -1,6 +1,7 @@
 package fr.xebia.training.core;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * GenericDAO -
@@ -10,7 +11,11 @@ import java.io.Serializable;
 public interface GenericDAO<K  extends Serializable, T> {
 
     T findById(K id);
+
+    List<T> findAll();
+
     void delete(T obj);
+
     void saveOrUpdate(T obj);
 
 }

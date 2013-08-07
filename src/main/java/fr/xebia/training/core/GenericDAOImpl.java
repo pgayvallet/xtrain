@@ -1,35 +1,39 @@
 package fr.xebia.training.core;
 
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
+import java.sql.SQLException;
+import java.util.List;
 
 /**
  * GenericDAOImpl -
  *
  * @author spark <gayvallet@fullsix.com>
  */
-public abstract class GenericDAOImpl<K extends Serializable, T> implements GenericDAO<K, T> {
+public abstract class GenericDAOImpl<K extends Serializable, T> extends HibernateDaoSupport implements GenericDAO<K, T> {
 
     private Class<T> type;
 
     @Autowired
-    private SessionFactory sessionFactory;
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
-    protected SessionFactory getSessionFactory() {
-        if (sessionFactory == null) {
-            throw new IllegalStateException("SessionFactory has not been set on DAO before usage");
-        }
-        return sessionFactory;
+    public void injectSessionFactory(SessionFactory sessionFactory) {
+       setSessionFactory(sessionFactory);
     }
 
     public Class<T> getType() {
         return type;
+    }
+
+    protected DetachedCriteria getDetachedCriteria() {
+        return DetachedCriteria.forClass(getType());
     }
 
     public GenericDAOImpl() {
@@ -45,12 +49,19 @@ public abstract class GenericDAOImpl<K extends Serializable, T> implements Gener
     @Transactional
     @Override
     public void delete(T obj) {
-        getSessionFactory().getCurrentSession().delete(obj);
+       getHibernateTemplate().delete(obj);
     }
 
     @Transactional
     @Override
     public void saveOrUpdate(T obj) {
-        getSessionFactory().getCurrentSession().saveOrUpdate(obj);
+        getHibernateTemplate().saveOrUpdate(obj);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<T> findAll() {
+        DetachedCriteria criteria = getDetachedCriteria();
+        return getHibernateTemplate().findByCriteria(criteria);
     }
 }
