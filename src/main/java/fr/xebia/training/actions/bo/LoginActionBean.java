@@ -13,23 +13,12 @@ import net.sourceforge.stripes.integration.spring.SpringBean;
  *
  * @author spark <gayvallet@fullsix.com>
  */
-@UrlBinding("/login.action")
-public class AuthenticationActionBean extends BaseActionBean {
-
-    @SpringBean
-    private TrainingService trainingService;
+@UrlBinding("/bo/login")
+public class LoginActionBean extends BaseActionBean {
 
     @DefaultHandler
     public Resolution showLoginPage() {
         return new ForwardResolution("/bo/login.jsp");
     }
-
-
-    public String getMessage() {
-        return trainingService.getTest();
-    }
-
-
-
 
 }
