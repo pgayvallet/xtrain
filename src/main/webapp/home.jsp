@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    Koin Koin
+    Home.jsp
 
 </body>
 </html>

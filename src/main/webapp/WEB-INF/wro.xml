@@ -13,18 +13,29 @@
         <js>/js/libs/backbone.js</js>
     </group>
 
-    <group name="css">
+    <group name="base-css">
         <css>/css/reset.css</css>
         <css>/css/main.less</css>
     </group>
 
-    <group name="app">
-        <js>/js/main.js</js>
+    <group name="bootstrap">
+        <css>/js/libs/bootstrap/bootstrap.css</css>
+        <js>/js/libs/bootstrap/bootstrap.js</js>
+    </group>
+    <!-- BO -->
+
+    <group name="bo">
+        <group-ref>base-css</group-ref>
+        <!--<group-ref>bootstrap</group-ref>-->
+        <css>/css/backoffice.less</css>
     </group>
 
-    <group name="all">
-        <group-ref>libs</group-ref>
-        <group-ref>app</group-ref>
+    <!-- FO -->
+
+    <!--
+    <group name="fo">
+
     </group>
+    -->
 
 </groups>

@@ -1,7 +1,7 @@
 <%@ taglib prefix="stripes" uri="http://stripes.sourceforge.net/stripes.tld" %>
 
-<stripes:layout-render name="/back/templates/master.jsp">
+<stripes:layout-render name="/bo/layouts/master.jsp">
     <stripes:layout-component name="content">
-        Hello World!
+        BO Home.
     </stripes:layout-component>
 </stripes:layout-render>

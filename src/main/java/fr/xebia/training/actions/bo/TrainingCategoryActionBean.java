@@ -8,13 +8,13 @@ import net.sourceforge.stripes.action.*;
  *
  * @author spark <gayvallet@fullsix.com>
  */
-@UrlBinding("/bo/categories/{$event}.action")
+@UrlBinding("/bo/categories/{$event}")
 public class TrainingCategoryActionBean extends BaseActionBean{
 
     @DefaultHandler
     @HandlesEvent("list")
     public Resolution listCategories() {
-        return new ForwardResolution("/back/categories.jsp");
+        return new ForwardResolution("/bo/categories.jsp");
 
     }
 
