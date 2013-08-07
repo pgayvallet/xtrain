@@ -11,5 +11,5 @@ import org.springframework.stereotype.Repository;
  * @author spark <gayvallet@fullsix.com>
  */
 @Repository
-public class TrainingDAOImpl extends GenericDAOImpl<String, Training> implements TrainingDAO {
+public class TrainingDAOImpl extends GenericDAOImpl<Long, Training> implements TrainingDAO {
 }

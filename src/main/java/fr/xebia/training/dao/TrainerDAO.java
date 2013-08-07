@@ -10,5 +10,5 @@ import org.springframework.stereotype.Component;
  * @author spark <gayvallet@fullsix.com>
  */
 @Component
-public interface TrainerDAO extends GenericDAO<String, Trainer> {
+public interface TrainerDAO extends GenericDAO<Long, Trainer> {
 }

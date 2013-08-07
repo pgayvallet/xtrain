@@ -15,7 +15,7 @@ import java.util.List;
  * @author spark <gayvallet@fullsix.com>
  */
 @Repository
-public class TrainingCategoryDAOImpl extends GenericDAOImpl<String, TrainingCategory> implements TrainingCategoryDAO {
+public class TrainingCategoryDAOImpl extends GenericDAOImpl<Long, TrainingCategory> implements TrainingCategoryDAO {
 
     public List<TrainingCategory> findAll() {
         DetachedCriteria criteria = DetachedCriteria.forClass(getType());
