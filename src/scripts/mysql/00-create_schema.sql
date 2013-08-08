@@ -16,9 +16,16 @@ create table XT_TRAINER (
 
 create table XT_TRAINING (
     id bigint not null auto_increment,
+    permalink varchar(255) not null,
     presentation longtext,
     program longtext,
     title varchar(255) not null,
-    url varchar(255) not null,
+    category_id bigint,
     primary key (id)
 );
+
+alter table XT_TRAINING
+    add index FKD6D1BABD18BC752A (category_id),
+    add constraint FKD6D1BABD18BC752A
+    foreign key (category_id)
+    references TS_TRAINING_CAT (id);

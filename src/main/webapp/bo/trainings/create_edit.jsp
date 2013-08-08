@@ -25,6 +25,13 @@
 
             <stripes:errors/>
 
+            <label>Catégorie</label>
+            <stripes:select name="training.category.id">
+                <stripes:options-collection
+                        collection="${actionBean.availableCategories}"
+                        value="id" label="title"/>
+            </stripes:select>
+
             <label>Titre de la formation</label>
             <stripes:text name="training.title"/>
 

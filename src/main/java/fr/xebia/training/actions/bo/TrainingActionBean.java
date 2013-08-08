@@ -1,8 +1,10 @@
 package fr.xebia.training.actions.bo;
 
 import fr.xebia.training.core.BaseActionBean;
+import fr.xebia.training.dao.TrainingCategoryDAO;
 import fr.xebia.training.dao.TrainingDAO;
 import fr.xebia.training.model.Training;
+import fr.xebia.training.model.TrainingCategory;
 import net.sourceforge.stripes.action.*;
 import net.sourceforge.stripes.controller.LifecycleStage;
 import net.sourceforge.stripes.integration.spring.SpringBean;
@@ -22,6 +24,9 @@ public class TrainingActionBean extends BaseActionBean {
 
     @SpringBean
     private TrainingDAO trainingDAO;
+
+    @SpringBean
+    private TrainingCategoryDAO trainingCategoryDAO;
 
     private Long trainingId;
     private List<Training> trainings;
@@ -81,6 +86,10 @@ public class TrainingActionBean extends BaseActionBean {
             trainingDAO.delete(training);
         }
         return new RedirectResolution(this.getClass(), "list");
+    }
+
+    public List<TrainingCategory> getAvailableCategories() {
+        return trainingCategoryDAO.findAll();
     }
 
     // get / set
