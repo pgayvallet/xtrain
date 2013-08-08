@@ -1,10 +1,9 @@
 package fr.xebia.training.model;
 
 import fr.xebia.training.core.BaseEntity;
+import fr.xebia.training.model.enums.TrainingCategoryType;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * TrainingCategory -
@@ -16,10 +15,23 @@ import javax.persistence.Table;
 public class TrainingCategory extends BaseEntity {
 
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private TrainingCategoryType type;
+
+    @Column(nullable = false)
     private String title;
 
     @Column(nullable = false)
-    private String url;
+    private String permalink;
+
+
+    public TrainingCategoryType getType() {
+        return type;
+    }
+
+    public void setType(TrainingCategoryType type) {
+        this.type = type;
+    }
 
     public String getTitle() {
         return title;
@@ -29,11 +41,11 @@ public class TrainingCategory extends BaseEntity {
         this.title = title;
     }
 
-    public String getUrl() {
-        return url;
+    public String getPermalink() {
+        return permalink;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setPermalink(String permalink) {
+        this.permalink = permalink;
     }
 }

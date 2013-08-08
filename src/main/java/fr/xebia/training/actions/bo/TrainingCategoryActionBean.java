@@ -65,6 +65,11 @@ public class TrainingCategoryActionBean extends BaseActionBean {
         return new RedirectResolution(this.getClass(), "list").flash(this);
     }
 
+    @HandlesEvent("delete")
+    public Resolution deleteCategory() {
+        // TODO
+        return null;
+    }
 
     // get / set
 

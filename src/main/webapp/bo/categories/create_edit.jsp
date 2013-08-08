@@ -8,16 +8,23 @@
     <stripes:layout-component name="content">
         <h3>Création d'une catégorie<h3>
 
-
         <stripes:url var="submitUrl" beanclass="fr.xebia.training.actions.bo.TrainingCategoryActionBean" event="edit_submit"/>
         <stripes:form action="${submitUrl}" >
-
             <stripes:hidden name="category.id"/>
 
+            <label>Titre de la catégorie</label>
             <stripes:text name="category.title"/>
+
+            <label>Permalink ( alphanum et tirets uniquement )</label>
             <stripes:text name="category.url"/>
+
+            <label>Type de formation</label>
+            <stripes:select name="category.type">
+                <stripes:option value="TECHNICAL">Formation Technique</stripes:option>
+                <stripes:option value="AGILE">Formation Agile</stripes:option>
+            </stripes:select>
             
-            <stripes:submit name="do_submit" value="Sauver"/>
+            <stripes:submit name="do_submit" value="Enregistrer"/>
         </stripes:form>
 
     </stripes:layout-component>
