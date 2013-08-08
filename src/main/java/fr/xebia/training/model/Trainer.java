@@ -2,10 +2,7 @@ package fr.xebia.training.model;
 
 import fr.xebia.training.core.BaseEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Lob;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Trainer -
@@ -15,6 +12,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "XT_TRAINER")
 public class Trainer extends BaseEntity {
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private TrainerCategory category;
 
     @Column(nullable = false)
     private String firstName;
@@ -26,4 +26,35 @@ public class Trainer extends BaseEntity {
     @Lob
     private String bio;
 
+    public TrainerCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(TrainerCategory category) {
+        this.category = category;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
 }
