@@ -11,6 +11,9 @@
 
         <script type="text/javascript" src="${pageContext.request.contextPath}/wro/libs.js"></script>
         <script type="text/javascript" src="${pageContext.request.contextPath}/wro/bo.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/js/libs/tinymce/tinymce.min.js"></script>
+
+        <stripes:layout-component name="extra-head"/>
     </head>
     <body>
 
