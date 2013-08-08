@@ -20,7 +20,7 @@ public class Training extends BaseEntity {
     private String title;
 
     @Column(nullable = false)
-    private String url;
+    private String permalink;
 
     @Column
     @Lob
@@ -39,12 +39,12 @@ public class Training extends BaseEntity {
         this.title = title;
     }
 
-    public String getUrl() {
-        return url;
+    public String getPermalink() {
+        return permalink;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setPermalink(String permalink) {
+        this.permalink = permalink;
     }
 
     public String getPresentation() {

@@ -12,11 +12,13 @@
         <stripes:form action="${submitUrl}" >
             <stripes:hidden name="category.id"/>
 
+            <stripes:errors/>
+
             <label>Titre de la catégorie</label>
             <stripes:text name="category.title"/>
 
             <label>Permalink ( alphanum et tirets uniquement )</label>
-            <stripes:text name="category.url"/>
+            <stripes:text name="category.permalink"/>
 
             <label>Type de formation</label>
             <stripes:select name="category.type">

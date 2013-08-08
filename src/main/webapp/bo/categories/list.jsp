@@ -9,7 +9,7 @@
     <stripes:layout-component name="content">
         <h3>Gestion des catégories<h3>
 
-        <table>
+        <table class="table-clean">
             <thead>
                 <td>Id</td>
                 <td>Type</td>
