@@ -25,4 +25,5 @@ public class TrainerCategory extends BaseEntity {
     public void setName(String name) {
         this.name = name;
     }
+
 }

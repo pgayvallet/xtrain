@@ -39,12 +39,6 @@
             <version>3.6.10.Final</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.derby</groupId>
-            <artifactId>derby</artifactId>
-            <version>10.8.2.2</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
             <version>2.2.2</version>
@@ -103,6 +97,11 @@
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-jaxrs</artifactId>
             <version>1.9.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
         </dependency>
         <!-- wro4j -->
         <dependency>
@@ -190,30 +189,12 @@
                 <artifactId>hibernate3-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <!--
-                    <hibernatetool>
-                        <jpaconfiguration/>
-
-                        <classpath>
-                            <path location="${project.build.directory}/classes" />
-                        </classpath>
-
-                        <annotationconfiguration propertyfile="src/main/resources/common.properties" />
-
-                        <hbm2ddl update="true" create="true" export="false"
-                                 outputfilename="export.sql" format="true"
-                                 console="true" />
-
-                    </hibernatetool>
-                    -->
                     <components>
                         <component>
                             <name>hbm2ddl</name>
                             <implementation>annotationconfiguration</implementation>
                         </component>
-
                     </components>
-
                     <componentProperties>
                         <configurationfile>src/test/resources/hibernate.cfg.xml</configurationfile>
                         <outputfilename>${project.artifactId}-schema.sql</outputfilename>
@@ -228,8 +209,6 @@
                         <ejb3>true</ejb3>
                         <jdk5>true</jdk5>
                     </componentProperties>
-
-
                 </configuration>
             </plugin>
             <plugin>

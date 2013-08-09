@@ -5,14 +5,23 @@
 
     <div class="nav-element active">
         <stripes:link beanclass="fr.xebia.training.actions.bo.TrainingCategoryActionBean" event="list">
-            Gestion des Catégories
+            Catégories de formation
         </stripes:link>
     </div>
     <div class="nav-element">
         <stripes:link beanclass="fr.xebia.training.actions.bo.TrainingActionBean" event="list">
-            Gestion des Formations
+            Formations
         </stripes:link>
     </div>
-
+    <div class="nav-element">
+        <stripes:link beanclass="fr.xebia.training.actions.bo.TrainerActionBean" event="list_category">
+            Catégories de formateur
+        </stripes:link>
+    </div>
+    <div class="nav-element">
+        <stripes:link beanclass="fr.xebia.training.actions.bo.TrainerActionBean" event="list">
+            Formateurs
+        </stripes:link>
+    </div>
 
 </div>
