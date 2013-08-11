@@ -1,6 +1,6 @@
 package fr.xebia.training.actions.bo;
 
-import fr.xebia.training.core.BaseActionBean;
+import fr.xebia.training.core.security.RestrictedActionBean;
 import fr.xebia.training.dao.TrainingCategoryDAO;
 import fr.xebia.training.dao.TrainingDAO;
 import fr.xebia.training.model.Training;
@@ -20,7 +20,7 @@ import java.util.List;
  * @author spark <gayvallet@fullsix.com>
  */
 @UrlBinding("/bo/trainings/{$event}")
-public class TrainingActionBean extends BaseActionBean {
+public class TrainingActionBean extends RestrictedActionBean {
 
     @SpringBean
     private TrainingDAO trainingDAO;

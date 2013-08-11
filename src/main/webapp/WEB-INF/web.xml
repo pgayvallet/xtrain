@@ -110,7 +110,10 @@
          </init-param>
         <init-param>
              <param-name>Interceptor.Classes</param-name>
-             <param-value>net.sourceforge.stripes.integration.spring.SpringInterceptor</param-value>
+             <param-value>
+                 net.sourceforge.stripes.integration.spring.SpringInterceptor,
+                 fr.xebia.training.core.security.StripesSecurityInterceptor
+             </param-value>
         </init-param>
      </filter>
 
