@@ -1,0 +1,44 @@
+.nav {
+
+  width: 100%;
+  height: 35px;
+  top: 0px;
+  vertical-align: middle;
+  text-align: center;
+  position: fixed;
+  z-index: 20;
+  background-color: white;
+  border-bottom: 5px solid rgb(190, 186, 184);
+  -webkit-box-shadow: 0px 0px 7px 0px #999;
+  box-shadow: 0px 0px 7px 0px #999;
+
+  .nav-content {
+    width: 1000px;
+    height: 30px;
+    margin: auto;
+    position: relative;
+
+    a {
+      font: 15px 'UbuntuMedium', Arial, sans-serif;
+      color: @violet;
+      text-transform: uppercase;
+      margin: 0px 15px;
+      line-height: 35px;
+    }
+
+    .pointer {
+
+      //génère un triangle css
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 7px solid @greyline;
+
+      position: absolute;
+      top: 28px;
+      left: 50px;
+
+    }
+  }
+}

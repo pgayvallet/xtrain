@@ -32,10 +32,11 @@
 
     <!-- FO -->
 
-    <!--
-    <group name="fo">
-
+    <group name="front">
+        <group-ref>base-css</group-ref>
+        <css>/css/front/variables.less</css>
+        <css>/css/front/*.less</css>
     </group>
-    -->
+
 
 </groups>
