@@ -18,6 +18,9 @@ public class TrainerCategory extends BaseEntity {
     @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
+    private String permalink;
+
     public String getName() {
         return name;
     }
@@ -26,4 +29,11 @@ public class TrainerCategory extends BaseEntity {
         this.name = name;
     }
 
+    public String getPermalink() {
+        return permalink;
+    }
+
+    public void setPermalink(String permalink) {
+        this.permalink = permalink;
+    }
 }

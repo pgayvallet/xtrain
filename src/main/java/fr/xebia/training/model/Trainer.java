@@ -19,6 +19,9 @@ public class Trainer extends BaseEntity {
     @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
+    private String permalink;
+
     @Column
     @Lob
     private String bio;
@@ -46,4 +49,14 @@ public class Trainer extends BaseEntity {
     public void setBio(String bio) {
         this.bio = bio;
     }
+
+    public String getPermalink() {
+
+        return permalink;
+    }
+
+    public void setPermalink(String permalink) {
+        this.permalink = permalink;
+    }
+
 }

@@ -11,4 +11,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public interface TrainerCategoryDAO extends GenericDAO<Long, TrainerCategory> {
+
+    TrainerCategory findByPermalink(String permalink);
+
 }
