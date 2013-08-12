@@ -1,7 +1,7 @@
 package fr.xebia.training.actions.bo;
 
 import fr.xebia.training.core.BaseActionBean;
-import fr.xebia.training.service.SecurityService;
+import fr.xebia.training.core.security.SecurityService;
 import net.sourceforge.stripes.action.*;
 import net.sourceforge.stripes.integration.spring.SpringBean;
 

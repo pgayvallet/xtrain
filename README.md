@@ -6,3 +6,4 @@ xtrain
 - image upload
 - file upload
 - exclusions wro4j pom
+- authent : move credentials to file or db

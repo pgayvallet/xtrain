@@ -1,4 +1,4 @@
-package fr.xebia.training.service;
+package fr.xebia.training.core.security;
 
 import org.springframework.stereotype.Component;
 
