@@ -19,11 +19,9 @@
 
         <div class="global-container">
 
-            <div class="header-container">
-                <stripes:layout-component name="header">
-                    <jsp:include page="/bo/components/header.jsp"/>
-                </stripes:layout-component>
-            </div>
+            <stripes:layout-component name="header">
+                <jsp:include page="/bo/components/header.jsp"/>
+            </stripes:layout-component>
 
             <div class="nav-container">
                 <stripes:layout-component name="nav">
@@ -35,11 +33,9 @@
                 <stripes:layout-component name="content"/>
             </div>
 
-            <div class="footer-container">
-                <stripes:layout-component name="header">
-                    <jsp:include page="/bo/components/footer.jsp"/>
-                </stripes:layout-component>
-            </div>
+            <stripes:layout-component name="footer">
+                <jsp:include page="/bo/components/footer.jsp"/>
+            </stripes:layout-component>
 
         </div>
 

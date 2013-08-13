@@ -6,7 +6,7 @@
 
 <stripes:layout-render name="/bo/layouts/master.jsp">
     <stripes:layout-component name="content">
-        <h3>Création d'une catégorie<h3>
+        <h3>Création d'une catégorie</h3>
 
         <stripes:url var="submitUrl" beanclass="fr.xebia.training.actions.bo.TrainerActionBean" event="do_submit_category"/>
         <stripes:form action="${submitUrl}" >

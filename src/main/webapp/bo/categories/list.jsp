@@ -7,7 +7,7 @@
 
 <stripes:layout-render name="/bo/layouts/master.jsp">
     <stripes:layout-component name="content">
-        <h3>Gestion des catégories<h3>
+        <h3>Gestion des catégories</h3>
 
         <table class="table-clean">
             <thead>
