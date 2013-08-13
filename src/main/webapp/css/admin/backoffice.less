@@ -13,7 +13,10 @@ body {
 
 /* header */
 .header {
-
+    position: fixed;
+    top: 0px;
+    height: 80px;
+    width: 100%;
     background: @purple1 url(../../img/bg-purple.png) top left repeat;
 
     .xebia-logo {
@@ -25,10 +28,16 @@ body {
       background: url('../../img/logo-transparent.png') no-repeat;
     }
 
-    position: fixed;
-    top: 0px;
-    height: 80px;
-    width: 100%;
+    .logout-button {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+
+      a {
+        color: @white;
+      }
+    }
+
 }
 
 /* footer */

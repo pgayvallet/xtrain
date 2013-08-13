@@ -4,4 +4,11 @@
 
 <div class="header">
     <div class="xebia-logo"></div>
+
+    <div class="logout-button">
+        <stripes:link beanclass="fr.xebia.training.actions.bo.LoginActionBean" event="logout">
+            Logout
+        </stripes:link>
+    </div>
+
 </div>
