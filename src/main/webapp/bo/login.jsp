@@ -3,23 +3,35 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <c:set var="actionBeanName" value="fr.xebia.training.actions.bo.LoginActionBean"/>
+<stripes:url var="submitUrl" beanclass="${actionBeanName}" event="do_login"/>
 
 <!DOCTYPE html>
 <html>
     <head>
         <title>Login - XFR Training</title>
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/wro/bo.css"/>
     </head>
     <body>
-        <stripes:url var="submitUrl" beanclass="${actionBeanName}" event="do_login"/>
-        <stripes:form class="login" action="${submitUrl}">
-
-            <label>Username</label>
-            <stripes:text name="username"/>
-
-            <label>Password</label>
-            <stripes:password name="password"/>
-
-            <stripes:submit name="submit" value="Ok"/>
-        </stripes:form>
+        <div class="login-container">
+            <div class="xebia-logo"></div>
+            <stripes:form class="login-form" action="${submitUrl}">
+                <div class="title">
+                    <h3>Admin - Authentication</h3>
+                </div>
+                <div class="content">
+                    <div>
+                        <label>Username</label>
+                        <stripes:text name="username"/>
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <stripes:password name="password"/>
+                    </div>
+                    <div class="submit">
+                        <stripes:submit name="submit" value="Ok"/>
+                    </div>
+                </div>
+            </stripes:form>
+        </div>
     </body>
 </html>

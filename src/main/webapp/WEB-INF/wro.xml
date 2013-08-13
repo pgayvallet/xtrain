@@ -15,6 +15,7 @@
 
     <group name="base-css">
         <css>/css/reset.css</css>
+        <css>/css/variables.less</css>
         <css>/css/main.less</css>
     </group>
 
@@ -26,15 +27,13 @@
 
     <group name="bo">
         <group-ref>base-css</group-ref>
-        <!--<group-ref>bootstrap</group-ref>-->
-        <css>/css/backoffice.less</css>
+        <css>/css/admin/*.less</css>
     </group>
 
     <!-- FO -->
 
     <group name="front">
         <group-ref>base-css</group-ref>
-        <css>/css/front/variables.less</css>
         <css>/css/front/*.less</css>
     </group>
 
