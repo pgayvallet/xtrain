@@ -2,7 +2,7 @@
 <%@ taglib prefix="stripes" uri="http://stripes.sourceforge.net/stripes.tld" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<stripes:useActionBean var="actionBean" beanclass="fr.xebia.training.actions.bo.TrainingActionBean"/>
+<stripes:useActionBean var="actionBean" beanclass="fr.xebia.training.actions.bo.TrainerActionBean"/>
 
 <stripes:layout-render name="/bo/layouts/master.jsp">
     <stripes:layout-component name="extra-head">
@@ -15,36 +15,32 @@
         </script>
     </stripes:layout-component>
 
-
     <stripes:layout-component name="content">
-        <h3>Création d'une catégorie</h3>
+        <h3>Création d'un formateur</h3>
 
-        <stripes:url var="submitUrl" beanclass="fr.xebia.training.actions.bo.TrainingActionBean" event="edit_submit"/>
-        <stripes:form action="${submitUrl}">
-            <stripes:hidden name="training.id"/>
+        <stripes:url var="submitUrl" beanclass="fr.xebia.training.actions.bo.TrainerActionBean" event="do_submit_trainer"/>
+        <stripes:form action="${submitUrl}" >
+            <stripes:hidden name="trainer.id"/>
 
             <stripes:errors/>
 
             <label>Catégorie</label>
-            <stripes:select name="training.category.id">
+            <stripes:select name="trainer.category.id">
                 <stripes:options-collection
                         collection="${actionBean.availableCategories}"
                         value="id" label="title"/>
             </stripes:select>
 
-            <label>Titre de la formation</label>
-            <stripes:text name="training.title"/>
+            <label>Nom du formateur</label>
+            <stripes:text name="trainer.name"/>
 
             <label>Permalink ( alphanum et tirets uniquement )</label>
-            <stripes:text name="training.permalink"/>
+            <stripes:text name="trainer.permalink"/>
 
-            <label>Présentation</label>
-            <stripes:textarea name="training.presentation"/>
+            <label>Biographie</label>
+            <stripes:textarea name="trainer.bio"/>
 
-            <label>Programme</label>
-            <stripes:textarea name="training.program"/>
-
-            <stripes:submit name="do_submit" value="Enregistrer"/>
+            <stripes:submit name="submit" value="Enregistrer"/>
         </stripes:form>
 
     </stripes:layout-component>
