@@ -15,7 +15,7 @@
         <%-- trainers --%>
         <a href="#universe">Nos formateurs</a>
         <c:forEach var="entry" items="${navActionBean.trainerMap}">
-            ${entry.key.name}
+            ${entry.key.title}
         </c:forEach>
 
         <a href="#contact">Promos</a>

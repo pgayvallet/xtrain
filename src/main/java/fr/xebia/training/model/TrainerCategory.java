@@ -16,17 +16,20 @@ import javax.persistence.Table;
 public class TrainerCategory extends BaseEntity {
 
     @Column(nullable = false)
-    private String name;
+    private String title;
 
     @Column(nullable = false)
     private String permalink;
 
-    public String getName() {
-        return name;
+    @Column
+    private Integer position;
+
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getPermalink() {
@@ -36,4 +39,13 @@ public class TrainerCategory extends BaseEntity {
     public void setPermalink(String permalink) {
         this.permalink = permalink;
     }
+
+    public Integer getPosition() {
+        return position;
+    }
+
+    public void setPosition(Integer position) {
+        this.position = position;
+    }
+
 }

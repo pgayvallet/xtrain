@@ -1,3 +1,12 @@
+
+create table TS_TRAINER_CAT (
+    id bigint not null auto_increment,
+    permalink varchar(255) not null,
+    position integer,
+    title varchar(255) not null,
+    primary key (id)
+);
+
 create table TS_TRAINING_CAT (
     id bigint not null auto_increment,
     permalink varchar(255) not null,
@@ -9,8 +18,9 @@ create table TS_TRAINING_CAT (
 create table XT_TRAINER (
     id bigint not null auto_increment,
     bio longtext,
-    firstName varchar(255) not null,
-    lastName varchar(255) not null,
+    name varchar(255) not null,
+    permalink varchar(255) not null,
+    category_id bigint not null,
     primary key (id)
 );
 
@@ -20,9 +30,15 @@ create table XT_TRAINING (
     presentation longtext,
     program longtext,
     title varchar(255) not null,
-    category_id bigint,
+    category_id bigint not null,
     primary key (id)
 );
+
+alter table XT_TRAINER
+    add index FK17721E52CA24CCD9 (category_id),
+    add constraint FK17721E52CA24CCD9
+    foreign key (category_id)
+    references TS_TRAINER_CAT (id);
 
 alter table XT_TRAINING
     add index FKD6D1BABD18BC752A (category_id),

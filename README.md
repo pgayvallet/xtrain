@@ -12,7 +12,8 @@ xtrain
 - page 404
 - regexp validation permalink
 - favicon
-
+- messageSource & i18n (for bo ?)
+- rename folder fo/bo to public / admin
 
 questions
 

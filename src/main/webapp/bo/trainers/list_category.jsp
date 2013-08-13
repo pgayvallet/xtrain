@@ -13,13 +13,15 @@
             <thead>
                 <td>Id</td>
                 <td>Nom</td>
+                <td>Permalink</td>
                 <td></td>
             </thead>
             <tbody>
             <c:forEach var="cat" items="${actionBean.categories}">
                 <tr>
                     <td>${cat.id}</td>
-                    <td>${cat.name}</td>
+                    <td>${cat.title}</td>
+                    <td>${cat.permalink}</td>
                     <td>
                         <stripes:link beanclass="${actionBeanName}" event="edit">
                             <stripes:param name="categoryId" value="${cat.id}"/>

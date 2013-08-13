@@ -5,11 +5,15 @@ import fr.xebia.training.dao.TrainerCategoryDAO;
 import fr.xebia.training.dao.TrainerDAO;
 import fr.xebia.training.model.Trainer;
 import fr.xebia.training.model.TrainerCategory;
-import net.sourceforge.stripes.action.DefaultHandler;
-import net.sourceforge.stripes.action.HandlesEvent;
-import net.sourceforge.stripes.action.Resolution;
-import net.sourceforge.stripes.action.UrlBinding;
+import fr.xebia.training.utils.ValidationUtils;
+import net.sourceforge.stripes.action.*;
+import net.sourceforge.stripes.controller.LifecycleStage;
 import net.sourceforge.stripes.integration.spring.SpringBean;
+import net.sourceforge.stripes.validation.SimpleError;
+import net.sourceforge.stripes.validation.ValidationErrors;
+import net.sourceforge.stripes.validation.ValidationMethod;
+import net.sourceforge.stripes.validation.ValidationState;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
@@ -23,7 +27,6 @@ public class TrainerActionBean extends RestrictedActionBean {
 
     @SpringBean
     private TrainerDAO trainerDAO;
-
     @SpringBean
     private TrainerCategoryDAO trainerCategoryDAO;
 
@@ -70,16 +73,38 @@ public class TrainerActionBean extends RestrictedActionBean {
         return forwardTo("/bo/trainers/create_edit_category.jsp");
     }
 
+    @After(on = {"edit_category"}, stages = LifecycleStage.BindingAndValidation)
+    private void beforeEdition() {
+        if(categoryId!=null) {
+            category = trainerCategoryDAO.findById(categoryId);
+        }
+    }
+
     @HandlesEvent("edit_category")
     public Resolution editCategory() {
-        return null;
+        return forwardTo("/bo/trainers/create_edit_category.jsp");
+    }
+
+    @ValidationMethod(when = ValidationState.ALWAYS, on = {"do_submit_category"})
+    public void validateEditionForm(ValidationErrors errors) {
+        if(StringUtils.isBlank(category.getTitle())) {
+            errors.add("category.name", new SimpleError("Name is missing"));
+        }
+        if(!ValidationUtils.isValidPermalink(category.getPermalink())) {
+            errors.add("category.permalink", new SimpleError("Permalink is missing or invalid"));
+        } else {
+            TrainerCategory permalinkCategory = trainerCategoryDAO.findByPermalink(category.getPermalink());
+            if(permalinkCategory!=null && !permalinkCategory.getId().equals(category.getId())) {
+                errors.add("category.permalink", new SimpleError("Permalink already used by another category"));
+            }
+        }
     }
 
     @HandlesEvent("do_submit_category")
     public Resolution submitCategory() {
-        return null;
+        trainerCategoryDAO.saveOrUpdate(category);
+        return new RedirectResolution(this.getClass(), "list_category");
     }
-
 
     // get / set
 
