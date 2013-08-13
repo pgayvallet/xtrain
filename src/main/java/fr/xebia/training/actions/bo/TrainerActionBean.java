@@ -42,11 +42,44 @@ public class TrainerActionBean extends RestrictedActionBean {
         return forwardTo("/bo/trainers/list.jsp");
     }
 
+    @HandlesEvent("create_trainer")
+    public Resolution createTrainer() {
+        return null;
+    }
+
+    @HandlesEvent("edit_trainer")
+    public Resolution editTrainer() {
+        return null;
+    }
+
+    @HandlesEvent("do_submit_trainer")
+    public Resolution submitTrainer() {
+        return null;
+    }
+
+    // category
+
     @HandlesEvent("list_category")
     public Resolution listCategories() {
         categories = trainerCategoryDAO.findAll();
         return forwardTo("/bo/trainers/list_category.jsp");
     }
+
+    @HandlesEvent("create_category")
+    public Resolution createCategory() {
+        return forwardTo("/bo/trainers/create_edit_category.jsp");
+    }
+
+    @HandlesEvent("edit_category")
+    public Resolution editCategory() {
+        return null;
+    }
+
+    @HandlesEvent("do_submit_category")
+    public Resolution submitCategory() {
+        return null;
+    }
+
 
     // get / set
 

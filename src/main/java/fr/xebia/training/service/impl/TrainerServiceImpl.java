@@ -1,5 +1,6 @@
 package fr.xebia.training.service.impl;
 
+import com.google.common.collect.Maps;
 import fr.xebia.training.dao.TrainerCategoryDAO;
 import fr.xebia.training.dao.TrainerDAO;
 import fr.xebia.training.model.Trainer;
@@ -26,9 +27,17 @@ public class TrainerServiceImpl implements TrainerService {
 
     @Override
     public Map<TrainerCategory, List<Trainer>> getOrderedCategoryToTrainersMap() {
+        Map<TrainerCategory, List<Trainer>> map = Maps.newLinkedHashMap();
+        List<TrainerCategory> categories = trainerCategoryDAO.findAll();
 
-        // TODO
+        for(TrainerCategory category : categories) {
+            List<Trainer> categoryTrainers = trainerDAO.findByCategory(category.getId());
+            if(!categoryTrainers.isEmpty()) {
+                map.put(category, categoryTrainers);
+            }
+        }
 
-        return null;
+        return map;
     }
+
 }

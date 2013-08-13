@@ -24,4 +24,12 @@ public class TrainerDAOImpl extends GenericDAOImpl<Long, Trainer> implements Tra
         List<Trainer> results = getHibernateTemplate().findByCriteria(criteria);
         return results.isEmpty() ? null : results.get(0);
     }
+
+    @Override
+    public List<Trainer> findByCategory(long categoryId) {
+        DetachedCriteria criteria = getDetachedCriteria();
+        criteria.add(Restrictions.eq("category.id", categoryId));
+        return getHibernateTemplate().findByCriteria(criteria);
+    }
+
 }

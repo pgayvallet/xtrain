@@ -11,6 +11,7 @@ xtrain
 - favicon
 - page 404
 - regexp validation permalink
+- favicon
 
 
 questions

@@ -4,6 +4,8 @@ import fr.xebia.training.core.GenericDAO;
 import fr.xebia.training.model.Trainer;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * TrainerDAO -
  *
@@ -13,5 +15,7 @@ import org.springframework.stereotype.Component;
 public interface TrainerDAO extends GenericDAO<Long, Trainer> {
 
     Trainer findByPermalink(String permalink);
+
+    List<Trainer> findByCategory(long categoryId);
 
 }
