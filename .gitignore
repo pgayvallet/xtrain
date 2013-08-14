@@ -4,3 +4,4 @@ target/
 *.iws
 *.iml
 derby.log
+dep.txt

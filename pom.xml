@@ -32,6 +32,12 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.6.6</version>
         </dependency>
+        <!-- guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>14.0.1</version>
+        </dependency>
         <!-- hibernate -->
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -92,7 +98,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- jackson -->
+        <!-- jackson & gson -->
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-jaxrs</artifactId>
@@ -110,9 +116,39 @@
             <version>${wro4j.version}</version>
         </dependency>
         <dependency>
-            <groupId>ro.isdc.wro4j</groupId>             <!-- TODO : add exclusions for extensions -->
+            <groupId>ro.isdc.wro4j</groupId>
             <artifactId>wro4j-extensions</artifactId>
             <version>${wro4j.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-web</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.javascript</groupId>
+                    <artifactId>closure-compiler</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.github.lltyk</groupId>
+                    <artifactId>dojo-shrinksafe</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.jruby</groupId>
+                    <artifactId>jruby-complete</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>me.n4u.sass</groupId>
+                    <artifactId>sass-gems</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>nz.co.edmi</groupId>
+                    <artifactId>bourbon-gem-jar</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.codehaus.gmaven.runtime</groupId>
+                    <artifactId>gmaven-runtime-1.7</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- spring -->
         <dependency>
@@ -168,9 +204,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-        	<groupId>jstl</groupId>
-        	<artifactId>jstl</artifactId>
-        	<version>1.2</version>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
         </dependency>
         <!-- junit -->
         <dependency>
