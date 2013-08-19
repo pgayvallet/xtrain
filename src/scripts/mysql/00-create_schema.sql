@@ -21,6 +21,7 @@ create table XT_TRAINER (
     name varchar(255) not null,
     permalink varchar(255) not null,
     category_id bigint not null,
+    pictureFile_id bigint,
     primary key (id)
 );
 
@@ -31,6 +32,16 @@ create table XT_TRAINING (
     program longtext,
     title varchar(255) not null,
     category_id bigint not null,
+    primary key (id)
+);
+
+create table XT_DB_FILE (
+    id bigint not null auto_increment,
+    content longblob,
+    contentType varchar(255) not null,
+    fileName varchar(255) not null,
+    fileExtension varchar(255) not null,
+    fileSize bigint not null,
     primary key (id)
 );
 
@@ -45,3 +56,9 @@ alter table XT_TRAINING
     add constraint FKD6D1BABD18BC752A
     foreign key (category_id)
     references TS_TRAINING_CAT (id);
+
+ alter table XT_TRAINER
+    add index FK17721E52D1B56FD0 (pictureFile_id),
+    add constraint FK17721E52D1B56FD0
+    foreign key (pictureFile_id)
+    references XT_DB_FILE (id);

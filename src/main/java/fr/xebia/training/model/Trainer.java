@@ -26,6 +26,10 @@ public class Trainer extends BaseEntity {
     @Lob
     private String bio;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    private DbFile pictureFile;
+
+
     public TrainerCategory getCategory() {
         return category;
     }
@@ -59,4 +63,11 @@ public class Trainer extends BaseEntity {
         this.permalink = permalink;
     }
 
+    public DbFile getPictureFile() {
+        return pictureFile;
+    }
+
+    public void setPictureFile(DbFile pictureFile) {
+        this.pictureFile = pictureFile;
+    }
 }

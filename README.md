@@ -4,6 +4,9 @@ xtrain
 PAGES & FEATURES
 ================
 
+- Upload
+    - image & file upload (http://www.stripesframework.org/display/stripes/Storing+Files+with+Hibernate)
+
 - Home
     - carousel
     - nos videos
@@ -44,11 +47,9 @@ PAGES & FEATURES
 OTHER STUFF
 ===========
 
-- spring configuration per env (local / cloud)
+- spring config per environ (local / cloud)
 - police ubuntu ?
 - rewrite rules
-- image upload
-- file upload
 - authent : move credentials to file or db
 - sitemap.xml "dynamique"
 - page 404
@@ -56,11 +57,9 @@ OTHER STUFF
 - messageSource & i18n (for bo ?)
 - google analytics
 - api jsonp (si besoin)
+- wro4j config per environ ( use spring for config )
+- DONE favicon
+- DONE robots.txt
+- DONE rename folder fo/bo to public / admin
+- DONE exclusions wro4j pom
 
-DONE
-----
-
-- favicon
-- robots.txt
-- rename folder fo/bo to public / admin
-- exclusions wro4j pom
