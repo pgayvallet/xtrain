@@ -9,17 +9,24 @@ PAGES & FEATURES
     - nos videos
     - listing catalogue
     - liens bulles "nos formations"
+
 - Nav
+
 - Page Promo
+
 - Page Contact
     - branchement mailer (https://developer.cloudbees.com/bin/view/RUN/SendGrid)
-    - Section 1 (ou sommes nous)
-    - Section 3 (s'inscrire à une formation)
+    - DONE Section 1 (ou sommes nous)
+    - DONE Section 3 (s'inscrire à une formation)
 
 - Page About Us + Misc pages
+
 - Page Categories Formateurs
+
 - Page Formateur
+
 - Page Categories de formations
+
 - Page Formation
 
 OTHER STUFF

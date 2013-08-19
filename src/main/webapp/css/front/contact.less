@@ -1,4 +1,72 @@
 
+.work-section {
+
+    height: 450px;
+
+    .work-map {
+        position: absolute;
+        top: 10px;
+        left: 60px;
+        width: 400px;
+        height: 255px;
+        background: url(../../img/contact-work-map.png) no-repeat;
+    }
+
+    .france, .netherlands, .india {
+        position: absolute;
+        font: 15px 'UbuntuLightItalic', Arial, sans-serif;
+        color: @darkgrey;
+        border-top: 1px solid @grey;
+        border-bottom: 1px solid @grey;
+        width: 420px;
+        padding-bottom: 20px;
+        h3 {
+            font: 17px 'UbuntuRegular', Arial, sans-serif;
+            font-weight: bold;
+            margin: 15px 0px;
+            color: @purple;
+            a {
+                color: @purple;
+            }
+        }
+        p {
+            line-height: 20px;
+
+            &.padded {
+                margin: 0px 0px 0px 20px;
+            }
+        }
+        a {
+            color: @darkgrey;
+            text-decoration: none;
+        }
+        .and {
+            margin-top: -25px;
+            font: 14px 'UbuntuRegular', Arial, sans-serif;
+            font-weight: bold;
+            color: @purple;
+        }
+    }
+    .netherlands {
+        top: 320px;
+        left: 60px;
+    }
+    .india {
+        top: 320px;
+        left: 560px;
+    }
+    .france {
+        top: 65px;
+        left: 560px;
+        background: url('../../img/work-icons.png') no-repeat 0px 80px;
+        span {
+            margin-bottom: 8px;
+            display: block;
+        }
+    }
+
+}
+
 .contact-section {
 
     background: url('../../img/contact-flare.jpg') no-repeat top right @purple1;
@@ -137,4 +205,34 @@
 
         }
     }
+}
+
+.subscribe-section {
+    padding-bottom: 40px;
+
+    .section-content {
+        h2 {
+            color: @blue;
+        }
+
+        p {
+            color: @darkgrey;
+            margin-bottom: 15px;
+            line-height: 22px;
+        }
+
+        a, b {
+            color: @darkgrey;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    }
+
+
+
 }
