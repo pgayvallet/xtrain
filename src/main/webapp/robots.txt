@@ -1,0 +1,14 @@
+#
+# robots.txt
+#
+
+User-agent: *
+
+# Assets
+Disallow: /css/
+Disallow: /js/
+Disallow: /wro/
+Disallow: /img/
+
+# Private
+Disallow: /admin/
