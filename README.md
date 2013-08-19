@@ -5,6 +5,10 @@ PAGES & FEATURES
 ================
 
 - Home
+    - carousel
+    - nos videos
+    - listing catalogue
+    - liens bulles "nos formations"
 - Nav
 - Page Promo
 - Page Contact
@@ -17,6 +21,7 @@ PAGES & FEATURES
 OTHER STUFF
 ===========
 
+- police ubuntu ?
 - rewrite rules
 - image upload
 - file upload

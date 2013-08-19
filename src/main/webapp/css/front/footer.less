@@ -1,74 +1,83 @@
 .footer {
-  background-color: @lightgrey;
-  height: 100px;
-  text-align: center;
-  margin-top: 20px;
-
-  div {
-    display: inline-block;
-  }
-
-  .footer-logo {
+    background-color: @lightgrey;
+    height: 100px;
+    text-align: center;
     position: relative;
-    height: 70px;
-    width: 180px;
-    background: url('../../img/logo-xebia-training.png') no-repeat;
-  }
 
-  .footer-social {
-    background-color: @grey;
-    width: 600px;
-    height: 50px;
-    position: relative;
-    vertical-align: top;
-    top: 10px;
-    a {
-      position: relative;
-      display: inline-block;
-      vertical-align: center;
-    }
-    .work-twitter{
-      left: 10px;
-      width: 140px;
-      height: 35px;
-      background: url('../../img/work-twitter.png') no-repeat;
-    }
-    .work-viadeo{
-      width: 140px;
-      height: 35px;
-      background: url('../../img/work-viadeo.png') no-repeat;
-    }
-    .work-googleplus{
-      top: 10px;
-      width: 140px;
-      height: 40px;
-      background: url('../../img/work-googleplus.png') no-repeat;
-    }
-    .work-linkedin{
-      width: 140px;
-      height: 35px;
-      background: url('../../img/work-linkedin.png') no-repeat;
-    }
-  }
-  .footer-contact {
-    padding-left: 25px;
-    position: relative;
-    vertical-align: top;
-    right: 40px;
-    top:  15px;
-    font: 15px 'UbuntuLightItalic', Arial, sans-serif;
-    color: @darkgrey;
-    p {
-      line-height: 20px;
-      margin: 0px 20px;
-      padding-left: 18px;
-    }
+    .footer-content {
+        width: 1000px;
+        margin: auto;
+        padding-top: 15px;
+        position: relative;
 
-    .mail-icon {
-      background: url('../../img/work-mail-icon.png') no-repeat left center;
+        div {
+            display: inline-block;
+        }
+
+        .footer-logo {
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            height: 70px;
+            width: 180px;
+            background: url('../../img/logo-xebia-training.png') no-repeat;
+        }
+
+        .footer-social {
+            background-color: @grey;
+            width: 600px;
+            height: 50px;
+            position: absolute;
+            vertical-align: top;
+            top: 25px;
+            left: 195px;
+
+            a {
+                position: relative;
+                display: inline-block;
+            }
+            .work-twitter{
+                left: 10px;
+                width: 140px;
+                height: 35px;
+                background: url('../../img/work-twitter.png') no-repeat;
+            }
+            .work-viadeo{
+                width: 140px;
+                height: 35px;
+                background: url('../../img/work-viadeo.png') no-repeat;
+            }
+            .work-googleplus{
+                top: 10px;
+                width: 140px;
+                height: 40px;
+                background: url('../../img/work-googleplus.png') no-repeat;
+            }
+            .work-linkedin{
+                width: 140px;
+                height: 35px;
+                background: url('../../img/work-linkedin.png') no-repeat;
+            }
+        }
+        .footer-contact {
+            position: absolute;
+            right: 0px;
+            top:  30px;
+            font: 15px 'UbuntuLightItalic', Arial, sans-serif;
+            color: @darkgrey;
+
+            p {
+                line-height: 20px;
+                margin: 0px 20px;
+                padding-left: 18px;
+            }
+
+            .mail-icon {
+                background: url('../../img/work-mail-icon.png') no-repeat left center;
+            }
+            .tel-icon {
+                background: url('../../img/work-tel-icon.png') no-repeat left center;
+            }
+        }
     }
-    .tel-icon {
-      background: url('../../img/work-tel-icon.png') no-repeat left center;
-    }
-  }
 }

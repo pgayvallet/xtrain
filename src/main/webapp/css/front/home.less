@@ -1,0 +1,205 @@
+
+.category {
+    width: 100%;
+    position: relative;
+
+    .category-content {
+        width: 1000px;
+        margin: auto;
+        position: relative;
+    }
+
+    h2 {
+        color: @purple;
+        font: 65px 'UbuntuLight', Arial, sans-serif;
+        text-transform: uppercase;
+    }
+
+}
+
+/* section 1 : top */
+
+.hello {
+    background: url('../../img/home-top-bg.png') repeat-x;
+    margin-top: 25px;
+    height: 510px;
+
+    .hello-line {
+        position: absolute;
+        top: 293px;
+        left: 0px;
+        width: 100%;
+        height: 7px;
+        background: url('../../img/home-top-hr.png') repeat-x;
+    }
+
+    .hello-content {
+        h1 {
+            font: 30px 'UbuntuItalic', Arial, sans-serif;
+            color: @white;
+            background-color: @black;
+            position: absolute;
+            text-align: center;
+            top: 120px;
+            margin: 0px 20px;
+            padding: 10px 0px;
+        }
+
+        h2 {
+            position: absolute;
+            top: 45px;
+            margin: 0px;
+            margin-left: 20px;
+        }
+
+        .hello-tel {
+            font: 20px 'UbuntuBoldItalic', Arial, sans-serif;
+            color: white;
+            position: absolute;
+            top: 45px;
+            right: 20px;
+        }
+
+        .hello-content-icosahedron {
+            position: absolute;
+            top: 200px;
+            left: 100px;
+            width: 322px;
+            height: 230px;
+            background: url('../../img/icosahedron-full.png') no-repeat;
+            z-index: 10;
+        }
+
+        .hello-boids-back {
+            position: absolute;
+            top: 30px;
+            left: 350px;
+            width: 500px;
+            height: 230px;
+            background: url('../../img/icosahedron-smalls-back.png') no-repeat;
+            z-index: 0;
+        }
+
+        .hello-costume {
+            position: absolute;
+            top: 345px;
+            left: 437px;
+            width: 500px;
+            height: 230px;
+            background: url('../../img/home-top-costume.png') no-repeat;
+            z-index: 1;
+        }
+    }
+
+    .icosahedron {
+        width: 100%;
+        height: 220px;
+        position: absolute;
+        top: 300px;
+        right: 0px;
+        background: url('../../img/icosahedron.png') bottom right no-repeat;
+        background-color: #F1F0EE;
+    }
+
+}
+
+/* section 2 : "nos formations" */
+
+.passion {
+    background: url('../../img/home-formation-bg.jpg') center top no-repeat;
+    margin-top: 10px;
+    height: 720px;
+
+    .passion-content {
+
+        h2 {
+            position: absolute;
+            top: 30px;
+            left: 0px;
+            margin: 0px;
+        }
+
+        p {
+            position: absolute;
+            width: 500px;
+            top: 100px;
+            left: 0px;
+            line-height: 22px; /* TODO grr doesnt work */
+            color: @darkgrey;
+            font: 16px 'UbuntuLightItalic', Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        .passion-bubbles {
+            background: url('../../img/home-formation-bubbles.png') 224px 95px no-repeat;
+            height: 570px;
+        }
+
+        a {
+            font-family: 'UbuntuLightItalic', Arial, sans-serif;
+            color: @white;
+            position: absolute;
+            font-weight: bold;
+        }
+
+        .software     {top: 180px; right: 273px; font-size: 30px; }
+        .craftsmanship{top: 220px; right: 260px; font-size: 23px; }
+        .bigdata      {top: 245px; right: 497px; font-size: 25px; }
+        .cloud        {top: 249px; right: 116px; font-size: 30px; }
+        .agile        {top: 348px; right: 681px; font-size: 30px; }
+        .devops       {top: 388px; right: 391px; font-size: 23px; }
+        .java         {top: 363px; right:  68px; font-size: 29px; }
+        .web          {top: 478px; right: 503px; font-size: 30px; }
+        .mobility     {top: 464px; right: 225px; font-size: 30px; }
+    }
+
+    .passion-boids {
+        width: 675px;
+        height: 346px;
+        position: absolute;
+        bottom: -100px;
+        z-index: 10;
+        left: 0px;
+        background: url('../../img/home-formation-boids.png') no-repeat;
+    }
+
+}
+
+/* section 3 : catalogue */
+
+.trust {
+    background: url('../../img/bg-black.png');
+    height: 400px;
+
+    .trust-boids {
+        width: 620px;
+        height: 150px;
+        position: absolute;
+        top: -80px;
+        left: 80px;
+        z-index: 15;
+        background: url('../images/trust-boids.png') no-repeat;
+    }
+
+    .trust-content{
+        h2 {
+            color: @blue;
+            position: absolute;
+            right: 0px;
+            top: 30px;
+        }
+    }
+}
+
+/* section 4 : nos dernières vidéos */
+
+.universe {
+    height: 400px;
+
+    h2 {
+        position: absolute;
+        top: 30px;
+        left: 0px;
+        margin: 0px;
+    }
+}

@@ -6,6 +6,8 @@
 <div class="nav">
     <div class="nav-content">
 
+        <a href="#hello">Acceuil</a>
+
         <a href="#hello">A propos</a>
 
         <a href="#passion">Formations techniques</a>
