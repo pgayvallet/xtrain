@@ -1,8 +1,21 @@
 xtrain
 ======
 
-IN PROGRESS
------------
+PAGES & FEATURES
+================
+
+- Home
+- Nav
+- Page Promo
+- Page Contact
+- Page About Us + Misc pages
+- Page Categories Formateurs
+- Page Formateur
+- Page Categories de formations
+- Page Formation
+
+OTHER STUFF
+===========
 
 - rewrite rules
 - image upload
