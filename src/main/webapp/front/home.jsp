@@ -8,8 +8,8 @@
     <stripes:layout-component name="content">
 
         <%-- section 1 --%>
-        <div class="hello category">
-            <div class="hello-content category-content">
+        <div class="hello section">
+            <div class="hello-content section-content">
                 <div class="hello-boids-back"></div>
                 <h1>Formations Méthodes Agiles (Scrum, XP, Lean et Kanban) et Techniques (Java JEE, Big Data, Mobilité et Web)</h1>
                 <h2><img src="${contextPath}/img/logo-transparent.png" alt="Xebia Training"></h2>
@@ -35,8 +35,8 @@
         </div>
 
         <%-- section 2 --%>
-        <div class="passion category">
-            <div class="passion-content category-content">
+        <div class="passion section">
+            <div class="passion-content section-content">
                 <h2>Nos formations</h2>
                 <p>Xebia-Training propose des formations haut de gamme animées uniquement par des référents dans le domaine</p>
                 <div class="passion-bubbles">
@@ -55,16 +55,16 @@
         </div>
 
         <%-- section 3 --%>
-        <div class="trust category">
+        <div class="trust section">
             <div class="trust-boids"></div>
-            <div class="trust-content category-content">
+            <div class="trust-content section-content">
                 <h2>Catalogue</h2>
             </div>
         </div>
 
         <%-- section 4 --%>
-        <div class="universe category">
-            <div class="universe-content category-content">
+        <div class="universe section">
+            <div class="universe-content section-content">
                 <h2>Nos dernières vidéos</h2>
             </div>
         </div>

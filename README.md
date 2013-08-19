@@ -12,6 +12,10 @@ PAGES & FEATURES
 - Nav
 - Page Promo
 - Page Contact
+    - branchement mailer (https://developer.cloudbees.com/bin/view/RUN/SendGrid)
+    - Section 1 (ou sommes nous)
+    - Section 3 (s'inscrire à une formation)
+
 - Page About Us + Misc pages
 - Page Categories Formateurs
 - Page Formateur
@@ -21,6 +25,7 @@ PAGES & FEATURES
 OTHER STUFF
 ===========
 
+- spring configuration per env (local / cloud)
 - police ubuntu ?
 - rewrite rules
 - image upload

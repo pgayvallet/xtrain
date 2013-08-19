@@ -6,23 +6,24 @@
 <div class="nav">
     <div class="nav-content">
 
-        <a href="#hello">Acceuil</a>
+        <stripes:link beanclass="fr.xebia.training.actions.front.HomeActionBean">
+            Acceuil
+        </stripes:link>
 
-        <a href="#hello">A propos</a>
+        <a href="#">A propos</a>
 
-        <a href="#passion">Formations techniques</a>
+        <a href="#">Formations techniques</a>
 
-        <a href="#trust">Formations agiles</a>
+        <a href="#">Formations agiles</a>
 
         <%-- trainers --%>
-        <a href="#universe">Nos formateurs</a>
-        <c:forEach var="entry" items="${navActionBean.trainerMap}">
-            ${entry.key.title}
-        </c:forEach>
+        <a href="#">Nos formateurs</a>
 
-        <a href="#contact">Promos</a>
+        <a href="#">Promos</a>
 
-        <a href="#work">Contact</a>
+        <stripes:link beanclass="fr.xebia.training.actions.front.ContactActionBean">
+            Contact
+        </stripes:link>
 
         <div class="pointer"></div>
     </div>

@@ -5,7 +5,16 @@
 <stripes:layout-definition>
     <html>
     <head>
-        <title>Xebia Training</title>
+
+        <%-- title --%>
+        <c:choose>
+              <c:when test="${not empty pageTitle}">
+                <title>${pageTitle} - Xebia Training</title>
+              </c:when>
+              <c:otherwise>
+                <title>Xebia Training</title>
+              </c:otherwise>
+        </c:choose>
 
         <link rel="shortcut icon" href="img/icons/favicon.png">
         <link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">
