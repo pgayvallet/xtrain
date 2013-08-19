@@ -11,8 +11,14 @@ PAGES & FEATURES
     - liens bulles "nos formations"
 
 - Nav
+    - brancher les liens restants
+    - javascript ouverture menu L2 et L3
+    - position du pointer
 
 - Page Promo
+    - ajout flag promo + prix promo sur modèle
+    - table des promos
+    - formulaire demande de devis
 
 - Page Contact
     - branchement mailer (https://developer.cloudbees.com/bin/view/RUN/SendGrid)
@@ -20,6 +26,12 @@ PAGES & FEATURES
     - DONE Section 3 (s'inscrire à une formation)
 
 - Page About Us + Misc pages
+    - A propos de nous
+    - S'inscrire à une formation
+    - Devenir Scrum Master
+    - Xebia Essentials
+    - Mentions légales
+    - Conditions générales
 
 - Page Categories Formateurs
 

@@ -16,10 +16,11 @@
 
         <a href="#">Formations agiles</a>
 
-        <%-- trainers --%>
         <a href="#">Nos formateurs</a>
 
-        <a href="#">Promos</a>
+        <stripes:link beanclass="fr.xebia.training.actions.front.PromotionActionBean">
+            Promos
+        </stripes:link>
 
         <stripes:link beanclass="fr.xebia.training.actions.front.ContactActionBean">
             Contact
