@@ -26,6 +26,7 @@ OTHER STUFF
 - regexp validation permalink
 - messageSource & i18n (for bo ?)
 - google analytics
+- api jsonp (si besoin)
 
 DONE
 ----
