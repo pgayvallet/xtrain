@@ -6,6 +6,9 @@
     <head>
         <title>Xebia Training</title>
 
+        <link rel="shortcut icon" href="img/icons/favicon.png">
+        <link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">
+
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/wro/libs.css"/>
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/wro/front.css"/>
 

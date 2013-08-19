@@ -6,6 +6,8 @@
     <head>
         <title>BackOffice - XFR Training</title>
 
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/wro/libs.css"/>
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/wro/bo.css"/>
 
