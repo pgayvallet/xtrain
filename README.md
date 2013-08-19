@@ -15,9 +15,9 @@ IN PROGRESS
 - regexp validation permalink
 - favicon
 - messageSource & i18n (for bo ?)
-- rename folder fo/bo to public / admin
 
 DONE
 ----
 
+- rename folder fo/bo to public / admin
 - exclusions wro4j pom

@@ -1,6 +1,6 @@
 package fr.xebia.training.core.security;
 
-import fr.xebia.training.actions.bo.LoginActionBean;
+import fr.xebia.training.actions.admin.LoginActionBean;
 import net.sourceforge.stripes.action.RedirectResolution;
 import net.sourceforge.stripes.action.Resolution;
 import net.sourceforge.stripes.controller.ExecutionContext;
@@ -31,7 +31,6 @@ public class StripesSecurityInterceptor implements Interceptor {
     @Override
     public Resolution intercept(ExecutionContext executionContext) throws Exception {
         autowire(executionContext);
-
         Resolution resolution = executionContext.proceed();
         if(executionContext.getActionBean().getClass().isAnnotationPresent(RestrictedAccess.class)) {
             if(isAuthenticated()) {
