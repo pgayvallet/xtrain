@@ -7,7 +7,7 @@
     <div class="nav-content">
 
         <stripes:link beanclass="fr.xebia.training.actions.front.HomeActionBean">
-            Acceuil
+            Accueil
         </stripes:link>
 
         <a href="#">A propos</a>
