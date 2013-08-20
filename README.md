@@ -12,19 +12,31 @@ bees app:update
 PAGES & FEATURES
 ================
 
+- Model
+    - add vimeoId to categories
+    - add linkedIn Id to trainings
+    - add promo boolean to training
+    - add price to training
+    - add promo price to training
+    - add date(s) to training
+    - add trainer to training
+    - add planning file to training
+    - add picture to trainer
+
 - Upload
     - image & file upload (http://www.stripesframework.org/display/stripes/Storing+Files+with+Hibernate)
 
 - Home
     - carousel
-    - nos videos
+    - DONE nos videos
     - listing catalogue
     - liens bulles "nos formations"
 
 - Nav
-    - brancher les liens restants
-    - javascript ouverture menu L2 et L3
-    - position du pointer
+    - DONE brancher les liens restants
+    - DONE javascript ouverture menu L2 et L3
+    - DONE position du pointer
+    - cleanup position l3
 
 - Page Promo
     - ajout flag promo + prix promo sur modèle
