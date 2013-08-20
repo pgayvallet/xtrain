@@ -35,9 +35,10 @@
                 </stripes:link>
                 <div class="section-sub">
                     <c:forEach var="categoryEntry" items="${navActionBean.technicalMap}">
-                        <a href="#">
+                        <stripes:link beanclass="${techActionBean}">
+                            <stripes:param name="categoryLink" value="${categoryEntry.key.permalink}"/>
                             ${categoryEntry.key.title}
-                        </a>
+                        </stripes:link>
                     </c:forEach>
                 </div>
             </div>
@@ -50,9 +51,10 @@
                 </stripes:link>
                 <div class="section-sub">
                     <c:forEach var="categoryEntry" items="${navActionBean.agileMap}">
-                        <a href="#">
+                        <stripes:link beanclass="${agileActionBean}">
+                            <stripes:param name="categoryLink" value="${categoryEntry.key.permalink}"/>
                             ${categoryEntry.key.title}
-                        </a>
+                        </stripes:link>
                     </c:forEach>
                 </div>
             </div>

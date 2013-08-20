@@ -8,7 +8,7 @@ import net.sourceforge.stripes.action.UrlBinding;
  *
  * @author spark <pierre.gayvallet@gmail.com>
  */
-@UrlBinding("/formations-technniques/{categoryLink}/{trainingLink}")
+@UrlBinding("/formations-techniques/{categoryLink}/{trainingLink}")
 public class TechnicalTrainingActionBean extends AbstractTrainingActionBean {
 
     @Override

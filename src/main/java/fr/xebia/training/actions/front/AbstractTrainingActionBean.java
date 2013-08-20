@@ -12,6 +12,9 @@ import net.sourceforge.stripes.action.Resolution;
  */
 public abstract class AbstractTrainingActionBean extends BaseActionBean {
 
+    protected String categoryLink;
+    protected String trainingLink;
+
     protected abstract TrainingCategoryType getType();
 
     @DefaultHandler
@@ -19,4 +22,21 @@ public abstract class AbstractTrainingActionBean extends BaseActionBean {
         return forwardTo("/front/training_section.jsp");
     }
 
+    // get / set
+
+    public String getCategoryLink() {
+        return categoryLink;
+    }
+
+    public void setCategoryLink(String categoryLink) {
+        this.categoryLink = categoryLink;
+    }
+
+    public String getTrainingLink() {
+        return trainingLink;
+    }
+
+    public void setTrainingLink(String trainingLink) {
+        this.trainingLink = trainingLink;
+    }
 }
