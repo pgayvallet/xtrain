@@ -29,5 +29,6 @@
         </stripes:link>
 
         <div class="pointer"></div>
+
     </div>
 </div>

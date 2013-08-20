@@ -20,7 +20,7 @@
         <h3>Création d'une catégorie</h3>
 
         <stripes:url var="submitUrl" beanclass="fr.xebia.training.actions.admin.TrainingActionBean" event="edit_submit"/>
-        <stripes:form action="${submitUrl}">
+        <stripes:form action="${submitUrl}" class="edit-form">
             <stripes:hidden name="training.id"/>
 
             <stripes:errors/>

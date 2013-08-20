@@ -19,7 +19,7 @@
         <h3>Création d'un formateur</h3>
 
         <stripes:url var="submitUrl" beanclass="fr.xebia.training.actions.admin.TrainerActionBean" event="submit_edit"/>
-        <stripes:form action="${submitUrl}" >
+        <stripes:form action="${submitUrl}" class="edit-form">
             <stripes:hidden name="trainer.id"/>
 
             <stripes:errors/>
