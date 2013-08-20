@@ -1,11 +1,3 @@
-create table TS_TRAINER_CAT (
-  id bigint not null auto_increment,
-  permalink varchar(255) not null,
-  position integer,
-  title varchar(255) not null,
-  primary key (id)
-);
-
 create table TS_TRAINING_CAT (
   id bigint not null auto_increment,
   permalink varchar(255) not null,

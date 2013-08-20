@@ -45,13 +45,15 @@ public abstract class GenericDAOImpl<K extends Serializable, T> extends Hibernat
     @Transactional
     @Override
     public void delete(T obj) {
-       getHibernateTemplate().delete(obj);
+       getSession().delete(obj);
     }
 
     @Transactional
     @Override
+    @SuppressWarnings("unchecked")
     public void saveOrUpdate(T obj) {
-        getHibernateTemplate().saveOrUpdate(obj);
+        obj = (T) getSession().merge(obj);
+        getSession().saveOrUpdate(obj);
     }
 
     @Transactional(readOnly = true)
