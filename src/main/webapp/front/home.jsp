@@ -63,9 +63,12 @@
         </div>
 
         <%-- section 4 --%>
-        <div class="universe section">
-            <div class="universe-content section-content">
+        <div class="home-videos section">
+            <div class="section-content">
                 <h2>Nos dernières vidéos</h2>
+
+                <div class="vimeo-container" data-channelId="460236"></div>
+
             </div>
         </div>
 

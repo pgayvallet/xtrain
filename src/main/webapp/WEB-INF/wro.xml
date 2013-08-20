@@ -23,6 +23,7 @@
         <css>/js/libs/bootstrap/bootstrap.css</css>
         <js>/js/libs/bootstrap/bootstrap.js</js>
     </group>
+
     <!-- BO -->
 
     <group name="bo">
@@ -32,8 +33,16 @@
 
     <!-- FO -->
 
+    <group name="front-scripts">
+        <js>/js/fwk.js</js>
+        <js>/js/vimeo.js</js>
+        <js>/js/nav.js</js>
+        <js>/js/main.js</js>
+    </group>
+
     <group name="front">
         <group-ref>base-css</group-ref>
+        <group-ref>front-scripts</group-ref>
         <css>/css/front/*.less</css>
     </group>
 
