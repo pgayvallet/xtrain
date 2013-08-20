@@ -14,6 +14,7 @@
                 <td>Id</td>
                 <td>Titre</td>
                 <td>Lien</td>
+                <td>Categorie</td>
                 <td>Actions</td>
             </thead>
             <tbody>
@@ -22,6 +23,7 @@
                     <td>${training.id}</td>
                     <td>${training.title}</td>
                     <td>${training.permalink}</td>
+                    <td>${training.category.title}</td>
                     <td>
                         <stripes:link beanclass="${actionBeanName}" event="edit">
                             <stripes:param name="trainingId" value="${training.id}"/>

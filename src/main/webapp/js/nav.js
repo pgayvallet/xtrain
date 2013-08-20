@@ -63,6 +63,12 @@ definePackage("xebia.nav", function(pkg) {
 
         onSecondLevelMouseEnter : function(event) {
             this.setSecondPointer($(event.currentTarget), true);
+            var sectionContent = $(event.currentTarget).parent().children(".section-last");
+            if(sectionContent.length>0) {
+                this._openLastLevel(sectionContent, $(event.currentTarget));
+            } else {
+                this._hideLastLevel();
+            }
         },
 
         _openSubLevel : function(sectionContent) {
@@ -76,9 +82,20 @@ definePackage("xebia.nav", function(pkg) {
             this.ui.sub.stop().animate({top: "0px"});
         },
 
+        _openLastLevel : function(sectionContent, anchorLink) {
+            this.ui.last.html(sectionContent.clone());
+            this.ui.last.css({left : anchorLink.position().left}); // TODO : better than that.
+            this.ui.last.show();
+        },
+
+        _hideLastLevel : function() {
+            this.ui.last.hide();
+        },
+
         onMouseLeave : function(event) {
             var self = this;
             this.leaveTimer = window.setTimeout(function() {
+                self._hideLastLevel();
                 self._hideSubLevel();
                 self.setFirstPointer(self.selected, true);
             }, 500);

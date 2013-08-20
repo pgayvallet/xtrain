@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="stripes" uri="http://stripes.sourceforge.net/stripes-dynattr.tld" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <stripes:useActionBean var="navActionBean" beanclass="fr.xebia.training.actions.front.components.NavActionBean"/>
 
@@ -35,10 +36,23 @@
                 </stripes:link>
                 <div class="section-sub">
                     <c:forEach var="categoryEntry" items="${navActionBean.technicalMap}">
-                        <stripes:link beanclass="${techActionBean}">
-                            <stripes:param name="categoryLink" value="${categoryEntry.key.permalink}"/>
-                            ${categoryEntry.key.title}
-                        </stripes:link>
+                        <div class="nav-section">
+                            <stripes:link beanclass="${techActionBean}">
+                                <stripes:param name="categoryLink" value="${categoryEntry.key.permalink}"/>
+                                ${categoryEntry.key.title}
+                            </stripes:link>
+                            <c:if test="${fn:length(categoryEntry.value)>0}">
+                                <div class="section-last">
+                                    <c:forEach var="training" items="${categoryEntry.value}">
+                                        <stripes:link beanclass="${techActionBean}">
+                                            <stripes:param name="categoryLink" value="${categoryEntry.key.permalink}"/>
+                                            <stripes:param name="trainingLink" value="${training.permalink}"/>
+                                            ${training.title}
+                                        </stripes:link>
+                                    </c:forEach>
+                                </div>
+                            </c:if>
+                        </div>
                     </c:forEach>
                 </div>
             </div>
@@ -51,10 +65,23 @@
                 </stripes:link>
                 <div class="section-sub">
                     <c:forEach var="categoryEntry" items="${navActionBean.agileMap}">
-                        <stripes:link beanclass="${agileActionBean}">
-                            <stripes:param name="categoryLink" value="${categoryEntry.key.permalink}"/>
-                            ${categoryEntry.key.title}
-                        </stripes:link>
+                        <div class="nav-section">
+                            <stripes:link beanclass="${agileActionBean}">
+                                <stripes:param name="categoryLink" value="${categoryEntry.key.permalink}"/>
+                                ${categoryEntry.key.title}
+                            </stripes:link>
+                            <c:if test="${fn:length(categoryEntry.value)>0}">
+                                <div class="section-last">
+                                    <c:forEach var="training" items="${categoryEntry.value}">
+                                        <stripes:link beanclass="${agileActionBean}">
+                                            <stripes:param name="categoryLink" value="${categoryEntry.key.permalink}"/>
+                                            <stripes:param name="trainingLink" value="${training.permalink}"/>
+                                            ${training.title}
+                                        </stripes:link>
+                                    </c:forEach>
+                                </div>
+                            </c:if>
+                        </div>
                     </c:forEach>
                 </div>
             </div>

@@ -17,7 +17,7 @@
 
 
     <stripes:layout-component name="content">
-        <h3>Création d'une catégorie</h3>
+        <h3>Création d'une formation</h3>
 
         <stripes:url var="submitUrl" beanclass="fr.xebia.training.actions.admin.TrainingActionBean" event="edit_submit"/>
         <stripes:form action="${submitUrl}" class="edit-form">
