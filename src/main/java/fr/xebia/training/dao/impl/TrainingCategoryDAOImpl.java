@@ -3,6 +3,7 @@ package fr.xebia.training.dao.impl;
 import fr.xebia.training.core.GenericDAOImpl;
 import fr.xebia.training.dao.TrainingCategoryDAO;
 import fr.xebia.training.model.TrainingCategory;
+import fr.xebia.training.model.enums.TrainingCategoryType;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -26,6 +27,12 @@ public class TrainingCategoryDAOImpl extends GenericDAOImpl<Long, TrainingCatego
         return results.isEmpty() ? null : results.get(0);
     }
 
-
+    @Override
+    @SuppressWarnings({"unchecked"})
+    public List<TrainingCategory> findAllByType(TrainingCategoryType categoryType) {
+        DetachedCriteria criteria = getDetachedCriteria();
+        criteria.add(Restrictions.eq("type", categoryType));
+        return getHibernateTemplate().findByCriteria(criteria);
+    }
 
 }

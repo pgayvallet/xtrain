@@ -4,6 +4,8 @@ import fr.xebia.training.core.GenericDAO;
 import fr.xebia.training.model.Training;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * TrainingDAO -
  *
@@ -11,4 +13,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public interface TrainingDAO extends GenericDAO<Long, Training> {
+
+    List<Training> findByCategory(long categoryId);
+
 }

@@ -8,12 +8,14 @@
     <div class="nav-first">
         <div class="nav-content">
 
+            <%-- home --%>
             <div class="nav-section">
                 <stripes:link data-id="home" beanclass="fr.xebia.training.actions.front.HomeActionBean">
                     Accueil
                 </stripes:link>
             </div>
 
+            <%-- about --%>
             <div class="nav-section">
                 <a data-id="about" href="#">A propos</a>
                 <div class="section-sub">
@@ -25,26 +27,51 @@
                 </div>
             </div>
 
+            <%-- technical --%>
             <div class="nav-section">
-                <a data-id="technical" href="#">Formations techniques</a>
+                <c:set var="techActionBean" value="fr.xebia.training.actions.front.TechnicalTrainingActionBean"/>
+                <stripes:link data-id="technical" beanclass="${techActionBean}">
+                    Formations techniques
+                </stripes:link>
+                <div class="section-sub">
+                    <c:forEach var="categoryEntry" items="${navActionBean.technicalMap}">
+                        <a href="#">
+                            ${categoryEntry.key.title}
+                        </a>
+                    </c:forEach>
+                </div>
             </div>
 
+            <%-- agile --%>
             <div class="nav-section">
-                <a data-id="agiles" href="#">Formations agiles</a>
+                <c:set var="agileActionBean" value="fr.xebia.training.actions.front.AgileTrainingActionBean"/>
+                <stripes:link data-id="agile" beanclass="${agileActionBean}">
+                    Formations agiles
+                </stripes:link>
+                <div class="section-sub">
+                    <c:forEach var="categoryEntry" items="${navActionBean.agileMap}">
+                        <a href="#">
+                            ${categoryEntry.key.title}
+                        </a>
+                    </c:forEach>
+                </div>
             </div>
 
+            <%-- trainers --%>
             <div class="nav-section">
                 <stripes:link data-id="trainers" beanclass="fr.xebia.training.actions.front.TrainerActionBean">
                     Nos formateurs
                 </stripes:link>
             </div>
 
+            <%-- promo --%>
             <div class="nav-section">
                 <stripes:link data-id="promo" beanclass="fr.xebia.training.actions.front.PromotionActionBean">
                     Promos
                 </stripes:link>
             </div>
 
+            <%-- contact --%>
             <div class="nav-section">
                 <stripes:link data-id="contact" beanclass="fr.xebia.training.actions.front.ContactActionBean">
                     Contact
