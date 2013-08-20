@@ -37,6 +37,7 @@
         <js>/js/fwk.js</js>
         <js>/js/vimeo.js</js>
         <js>/js/nav.js</js>
+        <js>/js/left-nav.js</js>
         <js>/js/main.js</js>
     </group>
 

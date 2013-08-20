@@ -6,6 +6,11 @@ definePackage("xebia", function(pkg) {
         // initialize nav view
         var nav = new xebia.nav.NavView({el : $("#nav")});
 
+        // initialize left nav if required
+        var leftNavElement = $(".left-nav");
+        if(leftNavElement.length>0) {
+            var leftNav = new xebia.training.LeftNavView({el : leftNavElement});
+        }
 
         // displaying vimeo videos.
         var vimeoContainers = $(".vimeo-container");

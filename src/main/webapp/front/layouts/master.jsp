@@ -38,7 +38,7 @@
                     </jsp:include>
                 </stripes:layout-component>
 
-                <div class="content">
+                <div class="content ${containerClass}">
                     <stripes:layout-component name="content"/>
                 </div>
 

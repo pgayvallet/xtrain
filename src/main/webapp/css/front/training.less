@@ -1,0 +1,117 @@
+
+
+.breadcrumb-section {
+    background: url('../../img/bg-black.png');
+
+    .section-content {
+        padding-left: 25px;
+
+        a, span {
+            color: @blue;
+            font-size: 18px;
+            line-height: 35px;
+            font-style: italic;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+
+}
+
+.left-nav {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 15;
+
+    width: @leftNavWidth;
+
+    background-color: @grey2;
+
+    a {
+        display: block;
+        color: @lightgrey;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 35px;
+        border-bottom: solid @lightgrey 1px;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+}
+
+
+.training {
+
+
+    .inner-container {
+        position: relative;
+
+        .section {
+            height: 500px; /* TODO : remove */
+            .section-content {
+                padding-left: @leftNavWidth;
+                width: @containerWidth - @leftNavWidth;
+            }
+
+
+        }
+
+    }
+
+
+
+
+
+    .presentation-section {
+        .section-content {
+
+        }
+    }
+
+    .programme-section {
+        background: url('../../img/home-formation-bg.jpg') top left no-repeat;
+        height: 500px;
+
+        .section-content {
+            h2 {
+                color: @blue;
+            }
+
+        }
+    }
+
+    .bio-section {
+        background: url('../../img/bg-black.png') top left repeat;
+        height: 500px;
+
+        .section-content {
+            h2 {
+                color: @blue;
+            }
+
+        }
+    }
+
+    .info-section {
+
+    }
+
+    .testimony-section {
+        background: url('../../img/contact-flare.jpg') no-repeat top right @purple1;
+
+        .section-content {
+            h2 {
+                color: @white;
+            }
+        }
+
+    }
+
+}
+

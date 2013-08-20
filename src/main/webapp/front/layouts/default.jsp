@@ -5,7 +5,8 @@
 <stripes:layout-definition>
     <stripes:layout-render name="/front/layouts/master.jsp"
                            pageTitle="${pageTitle}"
-                           navSection="${navSection}">
+                           navSection="${navSection}"
+                           containerClass="${containerClass}">
 
         <stripes:layout-component name="content">
 

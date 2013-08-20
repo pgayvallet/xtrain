@@ -2,13 +2,99 @@
 <%@ taglib prefix="stripes" uri="http://stripes.sourceforge.net/stripes.tld" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<c:choose>
+    <c:when test="${actionBean.navSection == 'technical'}">
+        <c:set var="actionBeanName" value="fr.xebia.training.actions.front.TechnicalTrainingActionBean"/>
+        <c:set var="sectionName" value="Formations techniques"/>
+    </c:when>
+    <c:otherwise>
+        <c:set var="actionBeanName" value="fr.xebia.training.actions.front.AgileTrainingActionBean"/>
+        <c:set var="sectionName" value="Formations agiles"/>
+    </c:otherwise>
+</c:choose>
+
 <stripes:layout-render name="/front/layouts/default.jsp"
                        pageTitle="${actionBean.training.title}"
-                       navSection="${actionBean.navSection}">
+                       navSection="${actionBean.navSection}"
+                       containerClass="training">
 
     <stripes:layout-component name="content">
 
-        TRAINING.JSP
+        <%-- breadcrumb --%>
+        <div class="breadcrumb-section section">
+            <div class="section-content">
+                <stripes:link beanclass="${actionBeanName}">
+                    ${sectionName}
+                </stripes:link>
+                <span>/</span>
+                <stripes:link beanclass="${actionBeanName}">
+                    <stripes:param name="categoryLink" value="${actionBean.category.permalink}"/>
+                    ${actionBean.category.title}
+                </stripes:link>
+                <span>/</span>
+                <span>
+                        ${actionBean.training.title}
+                </span>
+            </div>
+        </div>
+
+        <div class="inner-container">
+
+            <%-- left nav --%>
+            <div class="left-nav">
+                <a href="#anchor-presentation">
+                    Présentation
+                </a>
+                <a href="#anchor-programme">
+                    Programme
+                </a>
+                <a href="#anchor-bio">
+                    Biographie
+                </a>
+                <a href="#anchor-info">
+                    Informations
+                </a>
+                <a href="#anchor-testimony">
+                    Témoignages
+                </a>
+            </div>
+
+            <div class="presentation-section section" id="anchor-presentation">
+                <div class="section-content">
+                    <h2>présentation</h2>
+
+                </div>
+            </div>
+
+            <div class="programme-section section" id="anchor-programme">
+                <div class="section-content">
+                    <h2>programme</h2>
+
+                </div>
+            </div>
+
+            <div class="bio-section section" id="anchor-bio">
+                <div class="section-content">
+                    <h2>biographie</h2>
+
+                </div>
+            </div>
+
+            <div class="info-section section" id="anchor-info">
+                <div class="section-content">
+                    <h2>informations</h2>
+
+                </div>
+            </div>
+
+            <div class="testimony-section section" id="anchor-testimony">
+                <div class="section-content">
+                    <h2>témoignages</h2>
+
+                </div>
+            </div>
+
+        </div>
 
     </stripes:layout-component>
 
