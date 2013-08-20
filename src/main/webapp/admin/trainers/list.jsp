@@ -21,7 +21,7 @@
                 <tr>
                     <td>${trainer.id}</td>
                     <td>${trainer.name}</td>
-                    <td>${trainer.category.id} - ${trainer.category.title}</td>
+                    <td>${trainer.category}</td>
                     <td>
                         <stripes:link beanclass="${actionBeanName}" event="edit">
                             <stripes:param name="trainerId" value="${trainer.id}"/>

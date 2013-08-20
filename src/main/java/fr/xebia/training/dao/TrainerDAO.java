@@ -18,4 +18,8 @@ public interface TrainerDAO extends GenericDAO<Long, Trainer> {
 
     List<Trainer> findByCategory(long categoryId);
 
+    List<Trainer> getAgileTrainersOrderedByPosition();
+
+    List<Trainer> getTechnicalTrainersOrderedByPosition();
+
 }

@@ -8,16 +8,13 @@
             Catégories de formation
         </stripes:link>
     </div>
+
     <div class="nav-element">
         <stripes:link beanclass="fr.xebia.training.actions.admin.TrainingActionBean" event="list">
             Formations
         </stripes:link>
     </div>
-    <div class="nav-element">
-        <stripes:link beanclass="fr.xebia.training.actions.admin.TrainerActionBean" event="list_category">
-            Catégories de formateur
-        </stripes:link>
-    </div>
+
     <div class="nav-element">
         <stripes:link beanclass="fr.xebia.training.actions.admin.TrainerActionBean" event="list">
             Formateurs

@@ -13,6 +13,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "TS_TRAINER_CAT")
+@Deprecated
 public class TrainerCategory extends BaseEntity {
 
     @Column(nullable = false)

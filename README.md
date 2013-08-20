@@ -1,6 +1,14 @@
 xtrain
 ======
 
+http://xtrain-2.pgayvallet.eu.cloudbees.net
+
+bees config:set spring.profiles.active=cloudbees
+bees config:set ENV_NAME=cloudbees
+bees app:bind -a pgayvallet/xtrain-2 -db db-xtrain -as db-xtrain maxActive=5 maxIdle=2 maxWait=10000 removeAbandoned=true removeAbandonedTimeout=60 logAbandoned=true validationQuery="SELECT 1" testOnBorrow=true;
+bees app:update
+
+
 PAGES & FEATURES
 ================
 

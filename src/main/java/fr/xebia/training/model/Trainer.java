@@ -1,6 +1,7 @@
 package fr.xebia.training.model;
 
 import fr.xebia.training.core.BaseEntity;
+import fr.xebia.training.model.enums.TrainingCategoryType;
 
 import javax.persistence.*;
 
@@ -13,28 +14,31 @@ import javax.persistence.*;
 @Table(name = "XT_TRAINER")
 public class Trainer extends BaseEntity {
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    private TrainerCategory category;
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private TrainingCategoryType category;
 
     @Column(nullable = false)
     private String name;
-
-    @Column(nullable = false)
-    private String permalink;
 
     @Column
     @Lob
     private String bio;
 
+    @Column
+    private int position;
+
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
     private DbFile pictureFile;
 
 
-    public TrainerCategory getCategory() {
+    // get / set
+
+    public TrainingCategoryType getCategory() {
         return category;
     }
 
-    public void setCategory(TrainerCategory category) {
+    public void setCategory(TrainingCategoryType category) {
         this.category = category;
     }
 
@@ -54,13 +58,12 @@ public class Trainer extends BaseEntity {
         this.bio = bio;
     }
 
-    public String getPermalink() {
-
-        return permalink;
+    public int getPosition() {
+        return position;
     }
 
-    public void setPermalink(String permalink) {
-        this.permalink = permalink;
+    public void setPosition(int position) {
+        this.position = position;
     }
 
     public DbFile getPictureFile() {
@@ -70,4 +73,5 @@ public class Trainer extends BaseEntity {
     public void setPictureFile(DbFile pictureFile) {
         this.pictureFile = pictureFile;
     }
+
 }

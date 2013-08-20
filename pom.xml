@@ -15,7 +15,7 @@
         <maven.compiler.target>1.6</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <wro4j.version>1.7.0</wro4j.version>
-        <spring.version>3.1.1.RELEASE</spring.version>
+        <spring.version>3.1.4.RELEASE</spring.version>
         <jersey.version>1.15</jersey.version>
     </properties>
 
@@ -265,15 +265,58 @@
                         <defaultsDescriptor>${project.basedir}/src/test/resources/webdefault.xml
                         </defaultsDescriptor>
                     </webAppConfig>
+                    <systemProperties>
+                        <systemProperty>
+                            <name>ENV_NAME</name>
+                            <value>${ENV_NAME}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>spring.profiles.active</name>
+                            <value>${spring.profiles.active}</value>
+                        </systemProperty>
+                    </systemProperties>
+                    <webAppConfig>
+                        <defaultsDescriptor>${project.basedir}/src/test/resources/webdefault.xml
+                        </defaultsDescriptor>
+                    </webAppConfig>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>com.cloudbees</groupId>
                 <artifactId>bees-maven-plugin</artifactId>
                 <version>1.3.2</version>
+                <configuration>
+                    <appid>pgayvallet/xtrain-2</appid>
+                    <apiurl>https://api-eu.cloudbees.com/api</apiurl>
+                </configuration>
             </plugin>
         </plugins>
     </build>
+
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <ENV_NAME>local</ENV_NAME>
+                <spring.profiles.active>local</spring.profiles.active>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>cloudbees</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <ENV_NAME>cloudbees</ENV_NAME>
+                <spring.profiles.active>cloudbees</spring.profiles.active>
+            </properties>
+        </profile>
+    </profiles>
 
     <pluginRepositories>
         <pluginRepository>

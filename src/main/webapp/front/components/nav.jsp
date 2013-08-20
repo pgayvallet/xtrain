@@ -16,7 +16,9 @@
 
         <a href="#">Formations agiles</a>
 
-        <a href="#">Nos formateurs</a>
+        <stripes:link beanclass="fr.xebia.training.actions.front.TrainerActionBean">
+            Nos formateurs
+        </stripes:link>
 
         <stripes:link beanclass="fr.xebia.training.actions.front.PromotionActionBean">
             Promos

@@ -18,24 +18,20 @@
     <stripes:layout-component name="content">
         <h3>Création d'un formateur</h3>
 
-        <stripes:url var="submitUrl" beanclass="fr.xebia.training.actions.admin.TrainerActionBean" event="do_submit_trainer"/>
+        <stripes:url var="submitUrl" beanclass="fr.xebia.training.actions.admin.TrainerActionBean" event="submit_edit"/>
         <stripes:form action="${submitUrl}" >
             <stripes:hidden name="trainer.id"/>
 
             <stripes:errors/>
 
             <label>Catégorie</label>
-            <stripes:select name="trainer.category.id">
+            <stripes:select name="trainer.category">
                 <stripes:options-collection
-                        collection="${actionBean.availableCategories}"
-                        value="id" label="title"/>
+                        collection="${actionBean.availableCategoriesTypes}"/>
             </stripes:select>
 
             <label>Nom du formateur</label>
             <stripes:text name="trainer.name"/>
-
-            <label>Permalink ( alphanum et tirets uniquement )</label>
-            <stripes:text name="trainer.permalink"/>
 
             <label>Biographie</label>
             <stripes:textarea name="trainer.bio"/>
