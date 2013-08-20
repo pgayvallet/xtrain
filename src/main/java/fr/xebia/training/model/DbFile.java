@@ -2,10 +2,10 @@ package fr.xebia.training.model;
 
 import fr.xebia.training.core.BaseEntity;
 
-import javax.persistence.*;
-import java.io.InputStream;
-import java.sql.Blob;
-import java.sql.SQLException;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Lob;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "XT_DB_FILE")
@@ -25,15 +25,7 @@ public class DbFile extends BaseEntity {
 
     @Column
     @Lob
-    private Blob content;
-
-    @Transient
-    public InputStream getFileStream() throws SQLException {
-        if (getContent() == null) {
-            return null;
-        }
-        return getContent().getBinaryStream();
-    }
+    private byte[] content;
 
     // get / set
 
@@ -69,11 +61,11 @@ public class DbFile extends BaseEntity {
         this.fileSize = fileSize;
     }
 
-    public Blob getContent() {
+    public byte[] getContent() {
         return content;
     }
 
-    public void setContent(Blob content) {
+    public void setContent(byte[] content) {
         this.content = content;
     }
 }

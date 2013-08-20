@@ -3,8 +3,10 @@ package fr.xebia.training.actions.admin;
 import com.google.common.collect.Lists;
 import fr.xebia.training.core.security.RestrictedActionBean;
 import fr.xebia.training.dao.TrainerDAO;
+import fr.xebia.training.model.DbFile;
 import fr.xebia.training.model.Trainer;
 import fr.xebia.training.model.enums.TrainingCategoryType;
+import fr.xebia.training.utils.FileUtils;
 import net.sourceforge.stripes.action.*;
 import net.sourceforge.stripes.controller.LifecycleStage;
 import net.sourceforge.stripes.integration.spring.SpringBean;
@@ -26,6 +28,8 @@ public class TrainerActionBean extends RestrictedActionBean {
 
     @SpringBean
     private TrainerDAO trainerDAO;
+
+    private FileBean uploadedPictureFile;
 
     private List<Trainer> trainers;
     private Long trainerId;
@@ -55,15 +59,20 @@ public class TrainerActionBean extends RestrictedActionBean {
         return forwardTo("/admin/trainers/create_edit_trainer.jsp");
     }
 
-    @ValidationMethod(when = ValidationState.ALWAYS, on = {"do_submit_trainer"})
+    @ValidationMethod(when = ValidationState.ALWAYS, on = {"submit_edit"})
     public void validateTrainerEditionForm(ValidationErrors errors) {
         if(StringUtils.isBlank(trainer.getName())) {
             errors.add("trainer.name", new SimpleError("Name is missing"));
         }
+        // TODO : validate file size & type if exists.
     }
 
     @HandlesEvent("submit_edit")
     public Resolution submitTrainer() {
+        if(uploadedPictureFile !=null) {
+            DbFile pictureFile = FileUtils.uploadToDbFile(uploadedPictureFile);
+            trainer.setPictureFile(pictureFile);
+        }
         trainerDAO.saveOrUpdate(trainer);
         return new RedirectResolution(this.getClass(), "list");
     }
@@ -98,4 +107,11 @@ public class TrainerActionBean extends RestrictedActionBean {
         this.trainer = trainer;
     }
 
+    public FileBean getUploadedPictureFile() {
+        return uploadedPictureFile;
+    }
+
+    public void setUploadedPictureFile(FileBean uploadedPictureFile) {
+        this.uploadedPictureFile = uploadedPictureFile;
+    }
 }

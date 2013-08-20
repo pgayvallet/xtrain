@@ -28,9 +28,8 @@ public class Trainer extends BaseEntity {
     @Column
     private int position;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
     private DbFile pictureFile;
-
 
     // get / set
 

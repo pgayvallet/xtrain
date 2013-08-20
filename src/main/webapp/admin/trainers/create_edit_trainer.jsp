@@ -33,6 +33,10 @@
             <label>Nom du formateur</label>
             <stripes:text name="trainer.name"/>
 
+            <label>Image</label>
+            <stripes:file name="uploadedPictureFile"/>
+
+
             <label>Biographie</label>
             <stripes:textarea name="trainer.bio"/>
 
