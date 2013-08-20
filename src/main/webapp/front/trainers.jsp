@@ -5,7 +5,8 @@
 <stripes:useActionBean var="actionBean" beanclass="fr.xebia.training.actions.front.TrainerActionBean"/>
 
 <stripes:layout-render name="/front/layouts/default.jsp"
-                       pageTitle="Nos formateurs">
+                       pageTitle="Nos formateurs"
+                       navSection="trainers">
 
     <stripes:layout-component name="content">
 

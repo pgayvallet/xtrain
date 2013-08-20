@@ -33,7 +33,9 @@
             <div class="container">
 
                 <stripes:layout-component name="nav">
-                    <jsp:include page="/front/components/nav.jsp"/>
+                    <jsp:include page="/front/components/nav.jsp">
+                        <jsp:param name="section" value="${navSection}"/>
+                    </jsp:include>
                 </stripes:layout-component>
 
                 <div class="content">

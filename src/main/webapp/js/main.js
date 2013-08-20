@@ -1,7 +1,11 @@
-definePackage("xebia.nav", function(pkg) {
+definePackage("xebia", function(pkg) {
 
 
     $(function() {
+
+        // initialize nav view
+        var nav = new xebia.nav.NavView({el : $("#nav")});
+
 
         // displaying vimeo videos.
         var vimeoContainers = $(".vimeo-container");

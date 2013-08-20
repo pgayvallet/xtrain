@@ -3,7 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <stripes:layout-definition>
-    <stripes:layout-render name="/front/layouts/master.jsp" pageTitle="${pageTitle}">
+    <stripes:layout-render name="/front/layouts/master.jsp"
+                           pageTitle="${pageTitle}"
+                           navSection="${navSection}">
+
         <stripes:layout-component name="content">
 
             <%-- header --%>

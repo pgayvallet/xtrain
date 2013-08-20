@@ -4,7 +4,10 @@
 
 <stripes:useActionBean var="actionBean" beanclass="fr.xebia.training.actions.front.HomeActionBean"/>
 
-<stripes:layout-render name="/front/layouts/master.jsp">
+<stripes:layout-render name="/front/layouts/master.jsp"
+        pageTitle=""
+        navSection="home">
+
     <stripes:layout-component name="content">
 
         <%-- section 1 --%>

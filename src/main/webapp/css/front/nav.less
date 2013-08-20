@@ -1,46 +1,73 @@
 .nav {
 
+  z-index: 20;
   width: 100%;
   height: 35px;
   top: 0px;
   vertical-align: middle;
   text-align: center;
   position: fixed;
-  z-index: 20;
-  background-color: white;
-  border-bottom: 5px solid rgb(190, 186, 184);
-  -webkit-box-shadow: 0px 0px 7px 0px #999;
-  box-shadow: 0px 0px 7px 0px #999;
 
-  .nav-content {
-    width: 1000px;
-    height: 100%;
-    margin: auto;
-    position: relative;
 
-    a {
-      font: 15px 'UbuntuMedium', Arial, sans-serif;
-      color: @purple;
-      text-transform: uppercase;
-      margin: 0px 15px;
-      line-height: 35px;
+  .nav-line() {
+    position: absolute;
+    background-color: @white;
+    border-bottom: 5px solid rgb(190, 186, 184);
+    -webkit-box-shadow: 0px 0px 7px 0px #999;
+    box-shadow: 0px 0px 7px 0px #999;
+    width: 100%;
+    height: 35px;
+
+    .nav-content {
+      width: 1000px;
       height: 100%;
-      display: inline-block;
+      margin: auto;
+
+      .nav-section {
+        display: inline-block;
+
+        .section-sub {
+          display: none;
+        }
+      }
+
+      a {
+        font: 15px 'UbuntuMedium', Arial, sans-serif;
+        color: @purple;
+        text-transform: uppercase;
+        margin: 0px 10px;
+        line-height: 35px;
+        height: 100%;
+        display: inline-block;
+      }
+
+
     }
 
     .pointer {
-
-      //génère un triangle css
+      position: absolute;
+      top: 28px;
       width: 0;
       height: 0;
       border-left: 7px solid transparent;
       border-right: 7px solid transparent;
       border-bottom: 7px solid @greyline;
-
-      position: absolute;
-      top: 28px;
-      left: 80px;
-
     }
+
   }
+
+  .nav-first {
+    .nav-line();
+    z-index: 5;
+  }
+
+  .nav-sub {
+    .nav-line();
+    z-index: 1;
+
+  }
+
+
+
+
 }

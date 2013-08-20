@@ -5,7 +5,8 @@
 <stripes:useActionBean var="actionBean" beanclass="fr.xebia.training.actions.front.ContactActionBean"/>
 
 <stripes:layout-render name="/front/layouts/default.jsp"
-                       pageTitle="Contact">
+                       pageTitle="Contact"
+                       navSection="contact">
 
     <stripes:layout-component name="content">
 
