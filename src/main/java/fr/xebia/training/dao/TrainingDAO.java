@@ -14,6 +14,8 @@ import java.util.List;
 @Component
 public interface TrainingDAO extends GenericDAO<Long, Training> {
 
+    Training getByPermalink(String permalink);
+
     List<Training> findByCategory(long categoryId);
 
 }

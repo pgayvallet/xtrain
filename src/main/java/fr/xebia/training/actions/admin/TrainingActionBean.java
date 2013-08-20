@@ -65,7 +65,7 @@ public class TrainingActionBean extends RestrictedActionBean {
         if(StringUtils.isBlank(category.getPermalink())) {
             errors.add("category.permalink", new SimpleError("Permalink is mandatory"));
         } else {
-            TrainingCategory permalinkCategory = trainingCategoryDAO.getCategoryByPermalink(category.getPermalink());
+            TrainingCategory permalinkCategory = trainingCategoryDAO.getByPermalink(category.getPermalink());
             if(permalinkCategory!=null && !permalinkCategory.getId().equals(category.getId())) {
                 errors.add("category.permalink", new SimpleError("Permalink already used by another category"));
             }

@@ -19,6 +19,15 @@ public class TrainingDAOImpl extends GenericDAOImpl<Long, Training> implements T
 
     @Override
     @SuppressWarnings("unchecked")
+    public Training getByPermalink(String permalink) {
+        DetachedCriteria criteria = getDetachedCriteria();
+        criteria.add(Restrictions.eq("permalink", permalink));
+        List<Training> results = getHibernateTemplate().findByCriteria(criteria);
+        return results.isEmpty() ? null : results.get(0);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
     public List<Training> findByCategory(long categoryId) {
         DetachedCriteria criteria = getDetachedCriteria();
         criteria.add(Restrictions.eq("category.id", categoryId));
