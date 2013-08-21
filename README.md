@@ -53,6 +53,7 @@ PAGES & FEATURES
 OTHER STUFF
 ===========
 
+- cleanup sql script (columns order) + dummy data script
 - spring profile -> jndi db pour le cloud
 - police ubuntu ?
 - rewrite rules
