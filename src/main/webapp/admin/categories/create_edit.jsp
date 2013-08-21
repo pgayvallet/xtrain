@@ -5,6 +5,9 @@
 <stripes:useActionBean var="actionBean" beanclass="fr.xebia.training.actions.admin.TrainingCategoryActionBean"/>
 
 <stripes:layout-render name="/admin/layouts/master.jsp">
+    <stripes:layout-component name="extra-head">
+        <jsp:include page="/admin/components/tiny_mce_init.jsp"/>
+    </stripes:layout-component>
     <stripes:layout-component name="content">
         <h3>Création d'une catégorie</h3>
 
@@ -25,6 +28,30 @@
 
             <label>Permalink ( alphanum et tirets uniquement )</label>
             <stripes:text name="category.permalink"/>
+
+            <label>Description de la catégorie</label>
+            <stripes:textarea class="mce" name="category.description"/>
+
+            <label>Meta Description</label>
+            <stripes:textarea name="category.metaDescription"/>
+
+            <label>Meta Keywords</label>
+            <stripes:textarea name="category.metaKeywords"/>
+
+            <label>Catégorie blog xebia.fr</label>
+            <stripes:text name="category.blogCategory"/>
+
+            <label>channelId vimeo</label>
+            <stripes:text name="category.vimeoChannelId"/>
+
+            <label>Url du site d'offre</label>
+            <stripes:text name="category.offerSiteUrl"/>
+
+            <label>Titre de catégorie de la page de formation</label>
+            <stripes:text name="category.trainingTitle"/>
+
+            <label>Image de la catégorie</label>
+            <stripes:file name="uploadedPictureFile"/>
 
             <stripes:submit name="do_submit" value="Enregistrer"/>
         </stripes:form>

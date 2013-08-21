@@ -47,6 +47,7 @@
 
         <div class="contact-section section">
             <a name="contact"></a>
+            <div class="pattern"></div>
             <div class="section-content">
                 <h2>Contactez-nous</h2>
 

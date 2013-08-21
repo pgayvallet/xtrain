@@ -4,6 +4,11 @@ create table TS_TRAINING_CAT (
   permalink varchar(255) not null,
   title varchar(255) not null,
   type varchar(255) not null,
+  blogCategory varchar(255),
+  description longtext,
+  metaDescription longtext,
+  metaKeywords longtext,
+  vimeoChannelId bigint,
   primary key (id)
 );
 

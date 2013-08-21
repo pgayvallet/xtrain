@@ -1,3 +1,5 @@
+
+/* global section styles */
 .section {
     width: 100%;
     position: relative;
@@ -23,14 +25,14 @@
 
 }
 
-
-.vimeo-container {
+/* vimeo video styles */
+.x-vimeo-container {
 
   .vimeo-videos {
 
     .vimeo-video {
       float: left;
-      width: 49%;
+      width: 32%;
       text-align: center;
       margin-bottom: 20px;
 
@@ -39,3 +41,45 @@
   }
 
 }
+
+/* blog article styles */
+
+.x-blog-container {
+    .blog-article {
+        margin-bottom: 20px;
+
+        a {
+            display: block;
+            text-decoration: none;
+
+            &:hover {
+                background-color: rgba(220, 220, 220, 0.5);
+            }
+        }
+
+        h3 {
+            color: @purple;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .excerpt {
+            color: @darkgrey;
+            font-size: 16px;
+            line-height: 30px;
+            text-align: justify;
+        }
+
+        .separator {
+            width: 50%;
+            height: 1px;
+            background-color: @grey;
+            margin: 0px auto;
+        }
+
+    }
+
+}
+
+

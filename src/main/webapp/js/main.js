@@ -1,6 +1,5 @@
 definePackage("xebia", function(pkg) {
 
-
     $(function() {
 
         // initialize nav view
@@ -13,7 +12,7 @@ definePackage("xebia", function(pkg) {
         }
 
         // displaying vimeo videos.
-        var vimeoContainers = $(".vimeo-container");
+        var vimeoContainers = $(".x-vimeo-container");
         _.each(vimeoContainers, function(vimeoContainer, i) {
             var channelId = $(vimeoContainer).attr("data-channelId");
             if(channelId) {
@@ -24,6 +23,17 @@ definePackage("xebia", function(pkg) {
             }
         });
 
+        // displaying blog articles
+        var blogContainers = $(".x-blog-container");
+        _.each(blogContainers, function(blogContainer, i) {
+            var blogCategory = $(blogContainer).attr("data-category");
+            if(blogCategory) {
+                var articles = new xebia.blog.BlogArticleCollection(null, {category : blogCategory});
+                var articlesView = new xebia.blog.BlogArticleCollectionView({collection: articles});
+                articlesView.$el.appendTo(blogContainer);
+                articles.fetch();
+            }
+        });
 
     });
 

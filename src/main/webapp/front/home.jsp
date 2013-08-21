@@ -70,7 +70,7 @@
             <div class="section-content">
                 <h2>Nos dernières vidéos</h2>
 
-                <div class="vimeo-container" data-channelId="460236"></div>
+                <div class="x-vimeo-container" data-channelId="460236"></div>
 
             </div>
         </div>

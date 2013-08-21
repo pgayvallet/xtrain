@@ -56,8 +56,8 @@ definePackage("xebia.vimeo", function(pkg) {
             this.ui.iframe = $("<iframe>") // webkitAllowFullScreen mozallowfullscreen allowFullScreen
                 .attr({
                     src     : playerUrl,
-                    width   : 400,
-                    height  : 300,
+                    width   : 265,
+                    height  : 200,
                     frameborder : "0"
                 })
                 .appendTo(this.$el);
@@ -74,7 +74,7 @@ definePackage("xebia.vimeo", function(pkg) {
 
         render : function() {
             this.$el.empty();
-            _.each(this.collection.first(4), function(video) {
+            _.each(this.collection.first(3), function(video) {
                 var view = new pkg.VimeoVideoView({model : video});
                 view.$el.appendTo(this.$el);
                 view.render();

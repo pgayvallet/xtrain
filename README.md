@@ -56,11 +56,13 @@ PAGES & FEATURES
     - Mentions légales
     - Conditions générales
 
-- Page Categories Formateurs
-
 - Page Formateur
 
+- Page type de formation
+
 - Page Categories de formations
+    - excerpt pour les formations
+    - image du header ( pictureFile )
 
 - Page Formation
 

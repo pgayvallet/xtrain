@@ -29,6 +29,8 @@ public class TrainingCategoryActionBean extends RestrictedActionBean {
     private TrainingCategory category;
     private List<TrainingCategory> categories;
 
+    private FileBean uploadedPictureFile;
+
     @DefaultHandler
     @HandlesEvent("list")
     public Resolution listCategories() {
@@ -109,4 +111,13 @@ public class TrainingCategoryActionBean extends RestrictedActionBean {
     public void setCategory(TrainingCategory category) {
         this.category = category;
     }
+
+    public FileBean getUploadedPictureFile() {
+        return uploadedPictureFile;
+    }
+
+    public void setUploadedPictureFile(FileBean uploadedPictureFile) {
+        this.uploadedPictureFile = uploadedPictureFile;
+    }
+
 }
