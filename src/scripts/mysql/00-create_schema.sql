@@ -1,3 +1,4 @@
+
 create table TS_TRAINING_CAT (
   id bigint not null auto_increment,
   permalink varchar(255) not null,
@@ -33,6 +34,7 @@ create table XT_TRAINING (
   program longtext,
   title varchar(255) not null,
   category_id bigint not null,
+  trainer_id bigint not null,
   primary key (id)
 );
 
@@ -47,3 +49,9 @@ add index FKD6D1BABD18BC752A (category_id),
 add constraint FKD6D1BABD18BC752A
 foreign key (category_id)
 references TS_TRAINING_CAT (id);
+
+alter table XT_TRAINING
+add index FKD6D1BABD8298CBA4 (trainer_id),
+add constraint FKD6D1BABD8298CBA4
+foreign key (trainer_id)
+references XT_TRAINER (id);

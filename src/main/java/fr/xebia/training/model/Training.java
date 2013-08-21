@@ -16,6 +16,9 @@ public class Training extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private TrainingCategory category;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private Trainer trainer;
+
     @Column(nullable = false)
     private String title;
 
@@ -36,6 +39,14 @@ public class Training extends BaseEntity {
 
     public void setCategory(TrainingCategory category) {
         this.category = category;
+    }
+
+    public Trainer getTrainer() {
+        return trainer;
+    }
+
+    public void setTrainer(Trainer trainer) {
+        this.trainer = trainer;
     }
 
     public String getTitle() {

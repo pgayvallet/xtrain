@@ -32,6 +32,13 @@
                         value="id" label="title"/>
             </stripes:select>
 
+            <label>Formateur</label>
+            <stripes:select name="training.trainer.id">
+                <stripes:options-collection
+                        collection="${actionBean.availableTrainers}"
+                        value="id" label="name"/>
+            </stripes:select>
+
             <label>Titre de la formation</label>
             <stripes:text name="training.title"/>
 

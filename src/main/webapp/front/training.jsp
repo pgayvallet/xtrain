@@ -59,6 +59,7 @@
                 </a>
             </div>
 
+            <%-- -presentation --%>
             <div class="presentation-section section" id="anchor-presentation">
                 <div class="section-content">
                     <h2>présentation</h2>
@@ -66,6 +67,7 @@
                 </div>
             </div>
 
+            <%-- -program --%>
             <div class="programme-section section" id="anchor-programme">
                 <div class="section-content">
                     <h2>programme</h2>
@@ -73,13 +75,25 @@
                 </div>
             </div>
 
+            <%-- -bio / trainer --%>
             <div class="bio-section section" id="anchor-bio">
+                <c:set var="trainer" value="${actionBean.training.trainer}"/>
+                <stripes:url var="trainerPictureUrl" beanclass="fr.xebia.training.actions.ImagesActionBean" event="trainer">
+                    <stripes:param name="id" value="${trainer.id}"/>
+                </stripes:url>
                 <div class="section-content">
-                    <h2>biographie</h2>
-
+                    <div class="picture">
+                        <img src="${trainerPictureUrl}"/>
+                    </div>
+                    <div class="bio">
+                        <h2>biographie</h2>
+                        <h3>${trainer.name}</h3>
+                        <p>${trainer.bio}</p>
+                    </div>
                 </div>
             </div>
 
+            <%-- informations --%>
             <div class="info-section section" id="anchor-info">
                 <div class="section-content">
                     <h2>informations</h2>
@@ -107,10 +121,10 @@
                         </div>
                     </div>
 
-
                 </div>
             </div>
 
+            <%-- testimony --%>
             <div class="testimony-section section" id="anchor-testimony">
                 <div class="section-content">
                     <h2>témoignages</h2>

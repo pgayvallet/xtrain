@@ -1,8 +1,10 @@
 package fr.xebia.training.actions.admin;
 
 import fr.xebia.training.core.security.RestrictedActionBean;
+import fr.xebia.training.dao.TrainerDAO;
 import fr.xebia.training.dao.TrainingCategoryDAO;
 import fr.xebia.training.dao.TrainingDAO;
+import fr.xebia.training.model.Trainer;
 import fr.xebia.training.model.Training;
 import fr.xebia.training.model.TrainingCategory;
 import net.sourceforge.stripes.action.*;
@@ -24,7 +26,8 @@ public class TrainingActionBean extends RestrictedActionBean {
 
     @SpringBean
     private TrainingDAO trainingDAO;
-
+    @SpringBean
+    private TrainerDAO trainerDAO;
     @SpringBean
     private TrainingCategoryDAO trainingCategoryDAO;
 
@@ -90,6 +93,10 @@ public class TrainingActionBean extends RestrictedActionBean {
 
     public List<TrainingCategory> getAvailableCategories() {
         return trainingCategoryDAO.findAll();
+    }
+
+    public List<Trainer> getAvailableTrainers() {
+        return trainerDAO.findAll();
     }
 
     // get / set

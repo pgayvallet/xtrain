@@ -53,19 +53,12 @@
         position: relative;
 
         .section {
-            height: 500px; /* TODO : remove */
             .section-content {
                 padding-left: @leftNavWidth;
                 width: @containerWidth - @leftNavWidth;
             }
-
-
         }
-
     }
-
-
-
 
 
     .presentation-section {
@@ -88,13 +81,41 @@
 
     .bio-section {
         background: url('../../img/bg-black.png') top left repeat;
-        height: 500px;
 
         .section-content {
+            .clearfix;
+
             h2 {
                 color: @blue;
             }
 
+            .picture {
+                float: left;
+                width: 200px;
+                margin: 120px 0px 80px 0px;
+                text-align: center;
+                img {
+                    width: 150px;
+                    height: 180px;
+                }
+            }
+            .bio {
+                float: left;
+                width: 500px;
+                text-align: center;
+
+                h3 {
+                    color: @lightgrey;
+                    font-size: 32px;
+                    margin-bottom: 25px;
+                }
+
+                p {
+                    color: @lightgrey;
+                    font-size: 18px;
+                    line-height: 26px;
+                }
+            }
         }
     }
 
