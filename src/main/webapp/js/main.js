@@ -35,6 +35,21 @@ definePackage("xebia", function(pkg) {
             }
         });
 
+        // flexslider
+        // http://www.woothemes.com/flexslider/
+        /*
+         $('.our-formations .flexslider').flexslider({
+             animation: "slide",
+             animationLoop: true,
+             directionNav: false,
+             itemWidth: 700,
+             slideshowSpeed: 5000,
+             itemMargin: 0,
+             minItems: 1,
+             maxItems: 1
+         });
+         */
+
     });
 
 

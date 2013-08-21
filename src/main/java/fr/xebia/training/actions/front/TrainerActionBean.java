@@ -24,13 +24,8 @@ public class TrainerActionBean extends BaseActionBean {
     @SpringBean
     private TrainerDAO trainerDAO;
 
-    private List<Trainer> technicalTrainers;
-    private List<Trainer> agileTrainers;
-
     @Before(stages = {LifecycleStage.EventHandling})
     public void hydrateModels() {
-        technicalTrainers = trainerDAO.getTechnicalTrainersOrderedByPosition();
-        agileTrainers = trainerDAO.getAgileTrainersOrderedByPosition();
     }
 
     @DefaultHandler
@@ -38,13 +33,11 @@ public class TrainerActionBean extends BaseActionBean {
         return forwardTo("/front/trainers.jsp");
     }
 
+    public List<Trainer> getTrainers() {
+        return trainerDAO.findAll();
+    }
+
     // get / set
 
-    public List<Trainer> getTechnicalTrainers() {
-        return technicalTrainers;
-    }
 
-    public List<Trainer> getAgileTrainers() {
-        return agileTrainers;
-    }
 }

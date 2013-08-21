@@ -22,7 +22,7 @@
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/wro/libs.css"/>
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/wro/front.css"/>
 
-        <script type="text/javascript" src="${pageContext.request.contextPath}/wro/libs.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/wro/libs.js?minimize=false"></script>
         <script type="text/javascript" src="${pageContext.request.contextPath}/wro/front.js"></script>
 
         <stripes:layout-component name="extra-head"/>
