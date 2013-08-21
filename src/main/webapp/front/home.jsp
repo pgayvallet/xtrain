@@ -62,6 +62,7 @@
             <div class="trust-boids"></div>
             <div class="trust-content section-content">
                 <h2>Catalogue</h2>
+                <jsp:include page="components/training_table.jsp"/>
             </div>
         </div>
 
@@ -69,9 +70,7 @@
         <div class="home-videos section">
             <div class="section-content">
                 <h2>Nos dernières vidéos</h2>
-
                 <div class="x-vimeo-container" data-channelId="460236"></div>
-
             </div>
         </div>
 

@@ -2,7 +2,9 @@ package fr.xebia.training.dao.impl;
 
 import fr.xebia.training.core.GenericDAOImpl;
 import fr.xebia.training.dao.TrainingDAO;
+import fr.xebia.training.dto.TrainingCriteria;
 import fr.xebia.training.model.Training;
+import org.hibernate.Criteria;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -34,4 +36,26 @@ public class TrainingDAOImpl extends GenericDAOImpl<Long, Training> implements T
         return getHibernateTemplate().findByCriteria(criteria);
     }
 
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<Training> findAllPromo() {
+        DetachedCriteria criteria = getDetachedCriteria();
+        criteria.add(Restrictions.eq("promo", true));
+        return getHibernateTemplate().findByCriteria(criteria);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<Training> findByCriteria(TrainingCriteria trainingCriteria) {
+        DetachedCriteria criteria = getDetachedCriteria();
+        if(trainingCriteria.isPromo()) {
+            criteria.add(Restrictions.eq("promo", true));
+        }
+        if(trainingCriteria.getCategoryType()!=null) {
+            criteria.createAlias("category", "cat")
+                    .add(Restrictions.eq("cat.type", trainingCriteria.getCategoryType()));
+        }
+        criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+        return getHibernateTemplate().findByCriteria(criteria);
+    }
 }

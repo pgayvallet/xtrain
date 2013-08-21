@@ -1,6 +1,7 @@
 package fr.xebia.training.dao;
 
 import fr.xebia.training.core.GenericDAO;
+import fr.xebia.training.dto.TrainingCriteria;
 import fr.xebia.training.model.Training;
 import org.springframework.stereotype.Component;
 
@@ -17,5 +18,9 @@ public interface TrainingDAO extends GenericDAO<Long, Training> {
     Training getByPermalink(String permalink);
 
     List<Training> findByCategory(long categoryId);
+
+    List<Training> findAllPromo();
+
+    List<Training> findByCriteria(TrainingCriteria trainingCriteria);
 
 }

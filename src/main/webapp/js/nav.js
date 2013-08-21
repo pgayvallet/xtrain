@@ -5,6 +5,7 @@ definePackage("xebia.nav", function(pkg) {
         events : {
             "mouseenter .nav-first a"   : "onFirstLevelMouseEnter",
             "mouseenter .nav-sub a"     : "onSecondLevelMouseEnter",
+            "mouseenter"                : "onMouseEnter",
             "mouseleave"                : "onMouseLeave"
         },
 
@@ -59,6 +60,7 @@ definePackage("xebia.nav", function(pkg) {
             } else {
                 this._hideSubLevel();
             }
+            this._hideLastLevel();
         },
 
         onSecondLevelMouseEnter : function(event) {
@@ -99,6 +101,10 @@ definePackage("xebia.nav", function(pkg) {
                 self._hideSubLevel();
                 self.setFirstPointer(self.selected, true);
             }, 500);
+        },
+
+        onMouseEnter : function() {
+            this.clearLeaveTimeout();
         },
 
         clearLeaveTimeout : function() {

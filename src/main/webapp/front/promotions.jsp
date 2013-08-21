@@ -13,7 +13,9 @@
         <div class="section">
             <div class="section-content">
                 <h2 class="title-blue">Catalogue des promotions</h2>
-
+                <jsp:include page="components/training_table.jsp">
+                    <jsp:param name="promo" value="true"/>
+                </jsp:include>
             </div>
 
         </div>
