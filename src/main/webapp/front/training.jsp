@@ -33,7 +33,7 @@
                 </stripes:link>
                 <span>/</span>
                 <span>
-                        ${actionBean.training.title}
+                    ${actionBean.training.title}
                 </span>
             </div>
         </div>
@@ -83,6 +83,30 @@
             <div class="info-section section" id="anchor-info">
                 <div class="section-content">
                     <h2>informations</h2>
+
+                    <div class="bubbles">
+                        <div class="bubble date-bubble">
+                            <h3>dates</h3>
+                            <p>
+                                todo date 1
+                                <br>
+                                todo date 2
+                            </p>
+                        </div>
+                        <div class="bubble price-bubble">
+                            <h3>prix</h3>
+                            <p>
+                                Intra : TODO €
+                                <br>
+                                Inter : TODO €
+                            </p>
+                        </div>
+                        <div class="bubble subscribe-bubble">
+                            <h3>s'inscrire</h3>
+                            <p>S'inscrire à la formation</p>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
