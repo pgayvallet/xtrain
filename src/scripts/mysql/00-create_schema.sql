@@ -31,10 +31,19 @@ create table XT_TRAINING (
   id bigint not null auto_increment,
   permalink varchar(255) not null,
   presentation longtext,
+  presentationSiteUrl varchar(255),
+  priceInter varchar(30),
+  priceIntra varchar(30),
+  pricePromo varchar(30),
   program longtext,
+  promo char(1) not null,
   title varchar(255) not null,
   category_id bigint not null,
+  programFile_id bigint,
   trainer_id bigint not null,
+  linkedInProductId bigint,
+  metaDescription longtext,
+  metaKeywords longtext,
   primary key (id)
 );
 
@@ -55,3 +64,9 @@ add index FKD6D1BABD8298CBA4 (trainer_id),
 add constraint FKD6D1BABD8298CBA4
 foreign key (trainer_id)
 references XT_TRAINER (id);
+
+alter table XT_TRAINING
+add index FKD6D1BABD8AA90B8A (programFile_id),
+add constraint FKD6D1BABD8AA90B8A
+foreign key (programFile_id)
+references XT_DB_FILE (id);

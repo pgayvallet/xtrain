@@ -13,8 +13,10 @@
     </c:otherwise>
 </c:choose>
 
+<c:set var="training" value="${actionBean.training}"/>
+
 <stripes:layout-render name="/front/layouts/default.jsp"
-                       pageTitle="${actionBean.training.title}"
+                       pageTitle="${training.title}"
                        navSection="${actionBean.navSection}"
                        containerClass="training">
 
@@ -33,10 +35,15 @@
                 </stripes:link>
                 <span>/</span>
                 <span>
-                    ${actionBean.training.title}
+                    ${training.title}
                 </span>
             </div>
         </div>
+
+        <c:if test="${training.linkedInProductId!=null}">
+            <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: fr_FR</script>
+            <script type="IN/RecommendProduct" data-company="825630" data-product="${training.linkedInProductId}" data-counter="top"></script>
+        </c:if>
 
         <div class="inner-container">
 
@@ -64,6 +71,10 @@
                 <div class="section-content">
                     <h2>présentation</h2>
 
+                    <div>
+                        ${training.presentation}
+                    </div>
+
                 </div>
             </div>
 
@@ -71,6 +82,10 @@
             <div class="programme-section section" id="anchor-programme">
                 <div class="section-content">
                     <h2>programme</h2>
+
+                    <div class="program">
+                        ${training.program}
+                    </div>
 
                 </div>
             </div>

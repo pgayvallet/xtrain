@@ -35,6 +35,8 @@ public class TrainingActionBean extends RestrictedActionBean {
     private List<Training> trainings;
     private Training training;
 
+    private FileBean uploadedProgramFile;
+
     @DefaultHandler
     @HandlesEvent("list")
     public Resolution listCategories() {
@@ -124,5 +126,13 @@ public class TrainingActionBean extends RestrictedActionBean {
 
     public void setTraining(Training training) {
         this.training = training;
+    }
+
+    public FileBean getUploadedProgramFile() {
+        return uploadedProgramFile;
+    }
+
+    public void setUploadedProgramFile(FileBean uploadedProgramFile) {
+        this.uploadedProgramFile = uploadedProgramFile;
     }
 }

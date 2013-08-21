@@ -6,17 +6,7 @@
 
 <stripes:layout-render name="/admin/layouts/master.jsp">
     <stripes:layout-component name="extra-head">
-        <script type="text/javascript">
-            $(function() {
-                tinyMCE.init({
-                    selector : "textarea",
-                    forced_root_block : false,
-                    inline_styles : true,
-                    // valid_elements : "a,p,span,br",
-                    valid_styles : {'*' : 'color,font-weight,font-style,text-decoration'}
-                });
-            });
-        </script>
+        <jsp:include page="/admin/components/tiny_mce_init.jsp"/>
     </stripes:layout-component>
 
     <stripes:layout-component name="content">
@@ -40,9 +30,8 @@
             <label>Image</label>
             <stripes:file name="uploadedPictureFile"/>
 
-
             <label>Biographie</label>
-            <stripes:textarea name="trainer.bio"/>
+            <stripes:textarea class="mce" name="trainer.bio"/>
 
             <stripes:submit name="submit" value="Enregistrer"/>
         </stripes:form>

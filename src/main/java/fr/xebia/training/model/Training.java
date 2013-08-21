@@ -1,6 +1,7 @@
 package fr.xebia.training.model;
 
 import fr.xebia.training.core.BaseEntity;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
@@ -30,8 +31,36 @@ public class Training extends BaseEntity {
     private String presentation;
 
     @Column
+    private String presentationSiteUrl;
+
+    @Column
     @Lob
     private String program;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    private DbFile programFile;
+
+    @Column(nullable = false)
+    @Type(type = "yes_no")
+    private boolean promo;
+
+    @Column(length = 30)
+    private String priceInter;
+
+    @Column(length = 30)
+    private String priceIntra;
+
+    @Column(length = 30)
+    private String pricePromo;
+
+    @Column(nullable = true)
+    private Long linkedInProductId;
+
+    @Column(length = 1000)
+    private String metaDescription;
+
+    @Column(length = 1000)
+    private String metaKeywords;
 
     public TrainingCategory getCategory() {
         return category;
@@ -79,5 +108,77 @@ public class Training extends BaseEntity {
 
     public void setProgram(String program) {
         this.program = program;
+    }
+
+    public String getPresentationSiteUrl() {
+        return presentationSiteUrl;
+    }
+
+    public void setPresentationSiteUrl(String presentationSiteUrl) {
+        this.presentationSiteUrl = presentationSiteUrl;
+    }
+
+    public DbFile getProgramFile() {
+        return programFile;
+    }
+
+    public void setProgramFile(DbFile programFile) {
+        this.programFile = programFile;
+    }
+
+    public boolean isPromo() {
+        return promo;
+    }
+
+    public void setPromo(boolean promo) {
+        this.promo = promo;
+    }
+
+    public String getPriceInter() {
+        return priceInter;
+    }
+
+    public void setPriceInter(String priceInter) {
+        this.priceInter = priceInter;
+    }
+
+    public String getPriceIntra() {
+        return priceIntra;
+    }
+
+    public void setPriceIntra(String priceIntra) {
+        this.priceIntra = priceIntra;
+    }
+
+    public String getPricePromo() {
+        return pricePromo;
+    }
+
+    public void setPricePromo(String pricePromo) {
+        this.pricePromo = pricePromo;
+    }
+
+    public Long getLinkedInProductId() {
+        return linkedInProductId;
+    }
+
+    public void setLinkedInProductId(Long linkedInProductId) {
+        this.linkedInProductId = linkedInProductId;
+    }
+
+    public String getMetaDescription() {
+        return metaDescription;
+    }
+
+    public void setMetaDescription(String metaDescription) {
+        this.metaDescription = metaDescription;
+    }
+
+    public String getMetaKeywords() {
+        return metaKeywords;
+    }
+
+    public void setMetaKeywords(String metaKeywords) {
+        this.metaKeywords = metaKeywords;
     }
 }

@@ -6,13 +6,7 @@
 
 <stripes:layout-render name="/admin/layouts/master.jsp">
     <stripes:layout-component name="extra-head">
-        <script type="text/javascript">
-            $(function() {
-                tinyMCE.init({
-                    selector : "textarea"
-                });
-            });
-        </script>
+        <jsp:include page="/admin/components/tiny_mce_init.jsp"/>
     </stripes:layout-component>
 
 
@@ -45,11 +39,39 @@
             <label>Permalink ( alphanum et tirets uniquement )</label>
             <stripes:text name="training.permalink"/>
 
+            <label>LinkedIn Product ID</label>
+            <stripes:text name="training.linkedInProductId"/>
+
+            <label>Meta Description</label>
+            <stripes:textarea name="training.metaDescription"/>
+
+            <label>Meta Keywords</label>
+            <stripes:textarea name="training.metaKeywords"/>
+
             <label>Présentation</label>
-            <stripes:textarea name="training.presentation"/>
+            <stripes:textarea class="mce" name="training.presentation"/>
+
+            <label>Url site externe présentation</label>
+            <stripes:text name="training.presentationSiteUrl"/>
 
             <label>Programme</label>
-            <stripes:textarea name="training.program"/>
+            <stripes:textarea class="mce" name="training.program"/>
+
+            <label>Fichier pdf du programme</label>
+            <stripes:file name="uploadedProgramFile"/>
+
+            <label>Prix inter-entreprise</label>
+            <stripes:text name="training.priceInter"/>
+
+            <label>Prix intra-entreprise</label>
+            <stripes:text name="training.priceIntra"/>
+
+            <label>En promotion</label>
+            <stripes:checkbox name="training.promo" id="promoCheckbox"/>
+
+            <label>Prix promotionnel</label>
+            <stripes:text name="training.pricePromo"/>
+
 
             <stripes:submit name="do_submit" value="Enregistrer"/>
         </stripes:form>
