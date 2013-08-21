@@ -18,13 +18,32 @@
 
             <%-- about --%>
             <div class="nav-section">
-                <a data-id="about" href="#">A propos</a>
+                <c:set var="pageActionBean" value="fr.xebia.training.actions.front.PageActionBean"/>
+                <stripes:link data-id="about" beanclass="${pageActionBean}">
+                    <stripes:param name="page" value="a-propos"/>
+                    A propos
+                </stripes:link>
                 <div class="section-sub">
-                    <a href="#">A propos de nous</a>
-                    <a href="#">Inscriptions</a>
-                    <a href="#">Devenir Scrum Master</a>
-                    <a href="#">Xebia Essentials</a>
-                    <a href="#">Conditions Générales</a>
+                    <stripes:link beanclass="${pageActionBean}">
+                        <stripes:param name="page" value="a-propos"/>
+                        A propos de nous
+                    </stripes:link>
+                    <stripes:link beanclass="${pageActionBean}">
+                        <stripes:param name="page" value="inscription"/>
+                        Inscriptions
+                    </stripes:link>
+                    <stripes:link beanclass="${pageActionBean}">
+                        <stripes:param name="page" value="devenir-scrum-master"/>
+                        Devenir Scrum Master
+                    </stripes:link>
+                    <stripes:link beanclass="${pageActionBean}">
+                        <stripes:param name="page" value="xebia-essentials"/>
+                        Xebia Essentials
+                    </stripes:link>
+                    <stripes:link beanclass="${pageActionBean}">
+                        <stripes:param name="page" value="conditions-generales"/>
+                        Conditions Générales
+                    </stripes:link>
                 </div>
             </div>
 
@@ -118,6 +137,5 @@
     </div>
 
     <div class="nav-last"></div>
-
 
 </div>

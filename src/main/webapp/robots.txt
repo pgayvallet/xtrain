@@ -9,6 +9,7 @@ Disallow: /css/
 Disallow: /js/
 Disallow: /wro/
 Disallow: /img/
+Disallow: /images/
 
 # Private
 Disallow: /admin/
