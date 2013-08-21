@@ -20,6 +20,8 @@ import java.io.ByteArrayInputStream;
 @UrlBinding("/images/{$event}/{id}")
 public class ImagesActionBean extends BaseActionBean {
 
+    public static final String DEFAULT_AVATAR_PATH = "/img/default-avatar.png";
+
     @SpringBean
     private TrainerDAO trainerDAO;
 
@@ -33,12 +35,10 @@ public class ImagesActionBean extends BaseActionBean {
             if(pictureFile!=null) {
                 return new StreamingResolution(pictureFile.getContentType(), new ByteArrayInputStream(pictureFile.getContent()));
             } else {
-                // TODO : 404
-                return null;
+                return forwardTo(DEFAULT_AVATAR_PATH);
             }
         } else {
-            // TODO : 404 ?
-            return null;
+            return forwardTo(DEFAULT_AVATAR_PATH);
         }
     }
 

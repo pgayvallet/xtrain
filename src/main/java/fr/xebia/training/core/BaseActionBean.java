@@ -5,6 +5,8 @@ import net.sourceforge.stripes.action.ActionBeanContext;
 import net.sourceforge.stripes.action.ForwardResolution;
 import net.sourceforge.stripes.action.Resolution;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * BaseActionBean -
  *
@@ -22,6 +24,10 @@ public abstract class BaseActionBean implements ActionBean {
     @Override
     public ActionBeanContext getContext() {
         return context;
+    }
+
+    protected HttpServletRequest getRequest() {
+        return getContext().getRequest();
     }
 
     protected Resolution forwardTo(String path) {

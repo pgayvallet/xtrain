@@ -67,6 +67,14 @@ public class TrainerActionBean extends RestrictedActionBean {
         // TODO : validate file size & type if exists.
     }
 
+    @Before(on = {"submit_edit"}, stages = LifecycleStage.BindingAndValidation)
+    private void injectTrainer() {
+        String trainerId = getRequest().getParameter("trainer.id");
+        if(trainerId!=null) {
+            trainer = trainerDAO.findById(Long.parseLong(trainerId));
+        }
+    }
+
     @HandlesEvent("submit_edit")
     public Resolution submitTrainer() {
         if(uploadedPictureFile !=null) {
