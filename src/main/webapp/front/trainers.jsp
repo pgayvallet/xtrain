@@ -62,9 +62,20 @@
             <div class="section-content">
                 <h2>Nos formateurs</h2>
 
-                <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce facilisis nunc sed nunc molestie, vitae venenatis sapien consequat. Vestibulum vestibulum sem at eros cursus rhoncus. Etiam a imperdiet lectus. Pellentesque sit amet cursus nisi. Pellentesque vehicula tempor nunc, quis fringilla felis. Nunc felis sapien, interdum in iaculis sit amet, tincidunt et dolor. Sed vehicula metus nec velit laoreet, vestibulum blandit sapien semper. Nulla facilisi. Donec porttitor tellus leo, non lacinia est porta ut. Nullam venenatis varius facilisis.
-                </p>
+                <div class="description">
+                    <p>
+                        Xebia Training dispose de 2 pôles distincts: Les formations Agiles (Scrum, Kanban, XP ect) et les formations techniques Java, Big Data, DevOps ect).
+                    </p>
+                    <p>
+                        Les formations agiles sont animées entre autres, par le co-fondateur de Scrum, Jeff Sutherland mais également par Gojko Adzic, auteur de l'ouvrage
+                        "Specification by Example" et Gilles Mantel, créateur de la "Scrum Academy".
+                    </p>
+                    <p>
+                        Les formations techniques "produits" sont animées en parteniariat avec des sociétés telles que Puppetlabs, Cloudera, Datastax et 10Gen.
+                        Nos proposons également des formations thématiques avec notamment le leader du Java User Group Paris et auteur de l'ouvrage Java EE6,
+                        Antonio Goncalves, ainsi que Kirk Pepperdine, Java Champion et expert dans l'optimisation de performances Java.
+                    </p>
+                </div>
 
                 <div class="trainer-list">
                     <c:forEach var="trainer" items="${actionBean.trainers}">
